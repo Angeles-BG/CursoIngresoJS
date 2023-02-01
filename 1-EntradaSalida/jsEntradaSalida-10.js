@@ -4,6 +4,8 @@ Debemos lograr tomar el importe por ID.
 Transformarlo a entero (parseInt), luego
 mostrar el importe con un Descuento del 25 %
 en el cuadro de texto "RESULTADO"*/
+
+/*
 function mostrarAumento()
 {
 	//declaro variables.
@@ -24,4 +26,29 @@ function mostrarAumento()
 	nuevosueldo = sueldo - descuento;
     //muestro en la caja de texto el resultado obtenido y almacenado en la variable nuevosueldo. 
 	document.getElementById("txtIdResultado").value = nuevosueldo;
+}
+*/
+
+/*
+Ejercicio 10.bis: Debemos lograr tomar el importe por ID.
+Transformarlo a entero (parseInt), luego
+pedirle al usuario un % de descuento y mostrar el importe en el cuadro de texto "RESULTADO"
+*/
+function mostrarAumento()
+{
+	
+	let importe;
+	let porcentaje;
+	let descuento; 
+	let resultado;
+
+	importe = document.getElementById("txtIdImporte").value;
+	porcentaje = prompt("Ingrese un porcentaje de descuento: ");
+	porcentaje = parseInt(porcentaje); 
+
+	importe = parseInt(importe);
+	descuento = importe* porcentaje / 100;
+	resultado = importe - descuento;
+     
+	document.getElementById("txtIdResultado").value = resultado;
 }

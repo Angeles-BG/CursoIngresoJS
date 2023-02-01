@@ -7,11 +7,14 @@ function mostrar()
 
 	let nombre;
 	let edad;
+	let mensaje; 
+
 	nombre = document.getElementById("txtIdNombre").value; 
 	//le asigno a la variable nombre el valor introducido por el usuario en la caja de texto nombre. 
 	edad = document.getElementById("txtIdEdad").value; 
 	//le asigno a la variable edad el valor introducido por el usuario en la caja de texto edad. 
-	alert("Usted se llama " + nombre + " y tiene " + edad +" años."); 
+	mesaje = "Usted se llama " + nombre + " y tiene " + edad +" años."; 
+	alert(mensaje); 
 	//muestro lo almacenado en las variables con un texto concandenado, mediante la utilizacion de un alert. 
 
 

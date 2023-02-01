@@ -26,7 +26,7 @@ function mostrar() {
 /*
 Ejercicio 5.bis: 
  se debe mostrar un mensaje :
- "Perez , usted se llama jose y tiene 66 años"
+ "Perez , usted se llama jose y tiene 66 años".
  se debe optener el apellido , de la manera que puedan. 
 */
  function mostrar(){

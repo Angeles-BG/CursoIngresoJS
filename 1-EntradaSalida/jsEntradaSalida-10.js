@@ -40,16 +40,17 @@ function mostrarAumento()
 	
 	let importe;
 	let porcentaje;
-	let descuento; 
+	let calculo; 
 	let resultado;
 
 	importe = document.getElementById("txtIdImporte").value;
-	porcentaje = prompt("Ingrese un porcentaje de descuento: ");
-	porcentaje = parseInt(porcentaje); 
+	porcentaje = prompt("Ingrese un porcentaje a aplicar: ");
 
+	porcentaje = parseInt(porcentaje); 
 	importe = parseInt(importe);
-	descuento = importe* porcentaje / 100;
-	resultado = importe - descuento;
+
+	calculo = importe * porcentaje / 100;
+	resultado = importe + calculo;
      
 	document.getElementById("txtIdResultado").value = resultado;
 }

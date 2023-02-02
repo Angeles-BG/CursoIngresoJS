@@ -12,7 +12,7 @@ function mostrarAumento()
 	let porcentaje;
 	let nuevosueldo;
 	//Le asigno a la variable el porcentaje que me pide el ejercicio. 
-	porcentaje = 0.1; 
+	porcentaje = 10/100; 
 
 	//la suma del sueldo mas el aumento da lugar a nuestro nuevo sueldo.
 	//el aumento va ser igual a multiplicar el porcentaje por el sueldo, dividido por 100.

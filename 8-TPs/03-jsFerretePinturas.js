@@ -12,8 +12,8 @@ function FahrenheitCentigrados ()
 
     tempF = parseFloat(document.getElementById("txtIdTemperatura").value);
 
-    tempC = (tempF - 32 ) /  1.8;
-    mensaje = tempF + " grados Farenheit equivalen a  " + tempC.toFixed(2) + " grados Centigrados"; 
+    tempC = (tempF - 32 ) /  5/9;
+    mensaje = tempF + " grados Farenheit equivalen a  " + tempC + " grados Centigrados"; 
 
     alert(mensaje);
 
@@ -27,7 +27,7 @@ function CentigradosFahrenheit ()
 
     tempC = parseFloat(document.getElementById("txtIdTemperatura").value);
 
-    tempF = tempC * 1.8 + 32;
+    tempF = tempC * 5/9 + 32;
     mensaje = tempC + " grados Centigrados equivalen a  " + tempF + " grados Farenheit";
 
     alert(mensaje);

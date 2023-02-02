@@ -9,7 +9,10 @@ function mostrarAumento()
 	//declaro variables.
 	let sueldo;
 	let aumento;
+	let porcentaje;
 	let nuevosueldo;
+	//Le asigno a la variable el porcentaje que me pide el ejercicio. 
+	porcentaje = 0.1; 
 
 	//la suma del sueldo mas el aumento da lugar a nuestro nuevo sueldo.
 	//el aumento va ser igual a multiplicar el porcentaje por el sueldo, dividido por 100.
@@ -19,7 +22,7 @@ function mostrarAumento()
 	//Convierto el dato obtenido en un dato del tipo numerico flotante, es decir un numero entero con coma. 
 	sueldo = parseFloat(sueldo);
 	//calculo el aumento y lo almaceno en la variable aumento.
-	aumento = sueldo* 0.1;
+	aumento = sueldo* porcentaje;
 	//Calculo el nuevo sueldo. 
 	nuevosueldo = sueldo + aumento;
     //muestro en la caja de texto el resultado obtenido y almacenado en la variable nuevosueldo. 

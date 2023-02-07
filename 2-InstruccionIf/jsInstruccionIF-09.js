@@ -4,10 +4,10 @@ function mostrar()
 	let max;
 	let min; 
 	max =10 ;
-	min= 1; 
+	
 
 	//Genero el número RANDOM entre 1 y 10 
-	numero = Math.round(Math.random()*(max-min)+min);
+	numero = Math.round(Math.random()*max);
 
 	alert(numero);
 

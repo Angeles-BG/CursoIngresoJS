@@ -1,3 +1,4 @@
+//Angeles Belen García
 function mostrar()
 {
 	let edad;
@@ -6,11 +7,33 @@ function mostrar()
 	if( edad <13 || edad >17 ){
 		alert("La persona no es adolecente ");
 	}
-	/*
+	
+
+}//FIN DE LA FUNCIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 	Otra forma es hacer:
 	if( !(edad >=13 && edad <=17) ){
 		alert("La persona no es adolecente ");
 	}
 	*/
-
-}//FIN DE LA FUNCIÓN

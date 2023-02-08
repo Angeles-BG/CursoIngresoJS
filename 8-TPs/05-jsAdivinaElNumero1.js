@@ -7,55 +7,46 @@ secreto del 1 al 100, en la pantalla del juego
 “Usted es un ganador!!! y en solo X intentos”.
 de no ser igual se debe informar si “falta…”  para llegar al número secreto  o si “se pasó…”  del número secreto.
 */
-let numeroSecreto;
+var numeroSecreto; // declaro una variable global porque necesito usarla en las dos funciones. 
 
 function comenzar() {
-  let max = 100;
-  //Genero el número RANDOM entre 1 y 100
-  numeroSecreto = Math.round(Math.random() * max);
-  alert(numeroSecreto);
+  let max = 99;
+  let min = 1;
+  //genero el numero secreto. 
+  numeroSecreto = Math.ceil(Math.random() * max + min);
+  //lo pruebo 
+  console.log(numeroSecreto);
 }
+
+var intentos = 0; //Declaro una variable global porque debe inicializarse en cero una unica vez. 
 
 function verificar() {
-  //declaro variables
-  let numero;
-  let diferencia;
+  let numeroIngresado;
+  let falta;
+  let sobra;
+  let mensaje;
+  //sumo intentos cada vez que toco el boton verificar.  
+  intentos = intentos + 1;
+  //lo pruebo 
+  //console.log(intentos); FUNCIONO. 
+  // tomo el dato de la caja de texto. 
+  numeroIngresado = parseInt(document.getElementById("txtIdNumero").value);
+  //lo pruebo
+  //console.log(numeroIngresado); FUNCIONO. 
 
-  //tomo el numero de la caja de texto. 
-  numero = parseInt(document.getElementById("txtIdNumero").value);
-  alert(numero);
-
-  //tengo que verificar si el numero es el correcto, si se paso, o si le falta.
-  //cuanto le falto o cuanto se paso. 
-
-
-
-  if (numero == numeroSecreto) {
-    alert("Usted es un ganador y en solo " + intentos);
-
-  } else if (numero > numeroSecreto) {
-
-    diferencia = numero - numeroSecreto;
-    alert("se paso por " + diferencia);
-
+  if (numeroIngresado == numeroSecreto) {
+    mensaje = "Usted es un ganador!!! y en solo " + intentos + " intentos ";
+  } else if (numeroIngresado > numeroSecreto) {
+    sobra = numeroIngresado - numeroSecreto;
+    mensaje = "Se paso por " + sobra;
   } else {
-
-    diferencia = numeroSecreto - numero;
-    alert("le falto " + diferencia);
-
+    falta = numeroSecreto - numeroIngresado;
+    mensaje = "Le falto " + falta;
   }
-  document.getElementById("txtIdNumero").value = " ";
 
-
-
-
-
-
-  //tengo que ver cuantos intentos le toma.
-  //contar intentos  
-  //mostrar resultados. 
-
-
-
+  alert(mensaje);
+  document.getElementById("txtIdIntentos").value = intentos;
 }
+
+
 

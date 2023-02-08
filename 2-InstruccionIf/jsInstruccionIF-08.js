@@ -1,3 +1,4 @@
+//García Ángeles Belén
 function mostrar()
 {
 	let edad;

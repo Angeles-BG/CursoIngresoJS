@@ -14,7 +14,6 @@ var intentos = 0;
 
 function comenzar()
 {
-	
 	let max = 100;
 	let min = 1;
 	//Genero el número RANDOM entre 1 y 100

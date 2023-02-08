@@ -10,50 +10,45 @@ de no ser igual se debe informar si “falta…”  para llegar al número secre
 let numeroSecreto;
 
 function comenzar() {
-  const MAX = 100;
-  const MIN = 1;
+  let max = 100;
   //Genero el número RANDOM entre 1 y 100
-  numeroSecreto = Math.round(Math.random() * (MAX - MIN) + MIN);
+  numeroSecreto = Math.round(Math.random() * max);
+  alert(numeroSecreto);
 }
 
 function verificar() {
   //declaro variables
   let numero;
   let diferencia;
-  let flag = 0;
-  let intentos = 0;
 
   //tomo el numero de la caja de texto. 
   numero = parseInt(document.getElementById("txtIdNumero").value);
-
+  alert(numero);
 
   //tengo que verificar si el numero es el correcto, si se paso, o si le falta.
   //cuanto le falto o cuanto se paso. 
-  do {
-    if (numero != " ") {
-      if (numero == numeroSecreto) {
-        alert("Usted es un ganador y en solo " + intentos);
-        
-      } else if (numero > numeroSecreto) {
-       
-        diferencia = numero - numeroSecreto;
-        alert("se paso por " + diferencia);
 
-      } else {
-        
-        diferencia = numeroSecreto - numero;
-        alert("le falto " + diferencia);
 
-      }
-        intentos += 1;
-        flag = 1; 
-        document.getElementById("txtIdNumero").value = " ";
-    }
-   
-  } while (flag != 1 );
-  intentos = 1; 
 
-  alert(intentos); 
+  if (numero == numeroSecreto) {
+    alert("Usted es un ganador y en solo " + intentos);
+
+  } else if (numero > numeroSecreto) {
+
+    diferencia = numero - numeroSecreto;
+    alert("se paso por " + diferencia);
+
+  } else {
+
+    diferencia = numeroSecreto - numero;
+    alert("le falto " + diferencia);
+
+  }
+  document.getElementById("txtIdNumero").value = " ";
+
+
+
+
 
 
   //tengo que ver cuantos intentos le toma.

@@ -1,17 +1,19 @@
 //García ángeles Belén 
 function mostrar() {
 	let edad;
+	let mensaje; 
 	edad = parseInt(document.getElementById("txtIdEdad").value);
 
 	if (edad >= 18) {
-		alert("La persona es mayor de edad");
+		mensaje = "La persona es mayor de edad";
 	}
 	else if (edad >= 13) {
-		alert("La persona es adolecente");
+		mensaje = "La persona es adolecente";
 	}
 	else {
-		alert("La persona es un niño");
+		mensaje = "La persona es un niño";
 	}
+	alert(mensaje); 
 
 
 

@@ -3,19 +3,22 @@ function mostrar()
 	let numero;
 	let max;
 	let min; 
-	max =10 ;
+	let mensaje;
+	max = 9 ;
+	min = 1; 
 	
 
 	//Genero el número RANDOM entre 1 y 10 
-	numero = Math.round(Math.random()*max);
+	numero = Math.ceil(Math.random()* max + min );
 
 	if (numero <= 4){
-		alert(" Vamos la proxima se puede. Nota: " + numero); 
+		mensaje = " Vamos la proxima se puede. Nota: " + numero; 
 	}else if(numero < 9) {
-		alert(" APROBO. Nota: " + numero);
+		mensaje = " APROBO. Nota: " + numero;
 	}else{
-		alert(" EXCELENTE. Nota: " + numero );
+		mensaje = " EXCELENTE. Nota: " + numero ;
 	}
+	alert(mensaje); 
 
 
 }//FIN DE LA FUNCIÓN

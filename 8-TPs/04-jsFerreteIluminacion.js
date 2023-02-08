@@ -9,13 +9,14 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  */
 function CalcularPrecio() {
-    const PRECIO = 35;
+    let precio= 35;
     let cantidad;
     let marca;
     let descuento;
     let importefinal;
     let iibb;
     let precioConDescuento;
+    let mensaje; 
 
     cantidad = parseInt(document.getElementById("txtIdCantidad").value);
     marca = document.getElementById("Marca").value;
@@ -23,7 +24,7 @@ function CalcularPrecio() {
 
     if (cantidad == 1 || cantidad == 2) {
         descuento = 0;
-    } else if (cantidad == 3) {
+    } else if (cantidad == 3 ) {
         if (marca == "ArgentinaLuz") {
             descuento = 15;
         } else if (marca == "FelipeLamparas") {
@@ -46,17 +47,23 @@ function CalcularPrecio() {
     } else {
         descuento = 50;
     }
-
-    precioConDescuento = PRECIO - PRECIO * descuento / 100;
+// ejemplo con 5 lamparitas de marca OSRAM 
+    precioConDescuento = precio - precio * descuento / 100;
+    //      24,5             35 -  35     *  30     / 1000
     document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
     importefinal = precioConDescuento * cantidad;
-
+    //     122,5               24,5           * 5
 
     if (importefinal > 120) {
         iibb = importefinal * 10 / 100;
+        //12,25     122,5   *10 /  100
         importefinal += iibb;
-        alert("Total: $ " + importefinal + ". Usted pago $ " + iibb + " de IIBB.");
+        // 134,75            122,5 + 12,25
+        mensaje = "Total: $ " + importefinal + ". Usted pago $ " + iibb + " de IIBB.";
+        //                         134,75                          12,25
     } else {
-        alert("Total: $ " + importefinal);
+        mensaje = "Total: $ " + importefinal;
+                                
     }
+    alert(mensaje); 
 }

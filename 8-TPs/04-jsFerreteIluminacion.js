@@ -21,40 +21,37 @@ function CalcularPrecio() {
     marca = document.getElementById("Marca").value;
 
 
-    switch (cantidad) {
-        case 1:
-        case 2:
-            descuento = 0;
-            break;
-        case 3:
-            if (marca == "ArgentinaLuz") {
-                descuento = 15;
-            } else if (marca == "FelipeLamparas") {
-                descuento = 10;
-            } else {
-                descuento = 5;
-            }
-            break;
-        case 4:
-            if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
-                descuento = 25;
-            } else {
-                descuento = 20;
-            }
-            break;
-        case 5:
-            if (marca == "ArgentinaLuz") {
-                descuento = 40;
-            } else {
-                descuento = 30;
-            }
-            break;
-        default:
-            descuento = 50;
+    if (cantidad == 1 || cantidad == 2) {
+        descuento = 0;
+    } else if (cantidad == 3) {
+        if (marca == "ArgentinaLuz") {
+            descuento = 15;
+        } else if (marca == "FelipeLamparas") {
+            descuento = 10;
+        } else {
+            descuento = 5;
+        }
+    } else if (cantidad == 4) {
+        if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
+            descuento = 25;
+        } else {
+            descuento = 20;
+        }
+    } else if (cantidad == 5) {
+        if (marca == "ArgentinaLuz") {
+            descuento = 40;
+        } else {
+            descuento = 30;
+        }
+    } else {
+        descuento = 50;
     }
+
     precioConDescuento = PRECIO - PRECIO * descuento / 100;
     document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
     importefinal = precioConDescuento * cantidad;
+
+
     if (importefinal > 120) {
         iibb = importefinal * 10 / 100;
         importefinal += iibb;

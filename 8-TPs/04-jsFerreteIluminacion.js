@@ -147,7 +147,7 @@ function CalcularPrecio() {
     alert(mensaje);
 }
 */
-// switch(cantidad) y if (marca): 
+/* switch(cantidad) y if (marca): 
 function CalcularPrecio() {
     let precio
     let cantidad;
@@ -196,6 +196,73 @@ function CalcularPrecio() {
         default:
             descuento = 50;
             break;
+    }
+
+    precioConDescuento = precio - precio * descuento / 100;
+    document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
+    importefinal = precioConDescuento * cantidad;
+
+    if (importefinal > 120) {
+        iibb = importefinal * 10 / 100;
+        importefinal += iibb;
+        mensaje = "Total: $ " + importefinal + ". Usted pago $ " + iibb + " de IIBB.";
+    } else {
+        mensaje = "Total: $ " + importefinal;
+    }
+    alert(mensaje);
+}
+*/
+//SWITCH (las marcas), IF(cantidad): 
+function CalcularPrecio() {
+    let precio;
+    let cantidad;
+    let marca;
+    let descuento;
+    let importefinal;
+    let iibb;
+    let precioConDescuento;
+    let mensaje;
+
+    precio = 35;
+    descuento = 0;
+    cantidad = parseInt(document.getElementById("txtIdCantidad").value);
+    marca = document.getElementById("Marca").value;
+
+    if (cantidad < 3) {
+        descuento = 0;
+    } else if (cantidad == 3) {
+        switch (marca) {
+            case "ArgentinaLuz":
+                descuento = 15;
+                break;
+            case "FelipeLamparas":
+                descuento = 10;
+                break;
+            default:
+                descuento = 5;
+                break;
+        }
+    } else if (cantidad == 4) {
+        switch (marca) {
+            case "ArgentinaLuz":
+            case "FelipeLamparas":
+                descuento = 25;
+                break;
+            default:
+                descuento = 20;
+                break;
+        }
+    } else if (cantidad == 5) {
+        switch (marca) {
+            case "ArgentinaLuz":
+                descuento = 40;
+                break;
+            default:
+                descuento = 30;
+                break;
+        }
+    } else {
+        descuento = 50;
     }
 
     precioConDescuento = precio - precio * descuento / 100;

@@ -1,21 +1,24 @@
-function mostrar()
- {
-	
-	let destinoIngresado = document.getElementById("txtIdDestino").value;
+//Angeles Belen Garcia
+function mostrar() {
+
+	let destinoIngresado;
+	let mensaje;
+	destinoIngresado = document.getElementById("txtIdDestino").value;
 
 	switch (destinoIngresado) {
 		case "Bariloche":
-			alert("Se encuetra al Oeste del pais");
+			mensaje = "Se encuetra al Oeste del pais";
 			break;
 		case "Ushuaia":
-			alert(" Se encuentra al Sur del pais");
+			mensaje = " Se encuentra al Sur del pais";
 			break;
 		case "Cataratas":
-			alert("Se encuentra al Norte del pais");
+			mensaje = "Se encuentra al Norte del pais";
 			break;
 		case "Mar del plata":
-			alert("Se encuentra al Este del pais");
+			mensaje = "Se encuentra al Este del pais";
 			break;
 	}
+	alert(mensaje);
 
 }//FIN DE LA FUNCIÓN

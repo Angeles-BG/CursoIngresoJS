@@ -1,6 +1,11 @@
+//Angeles Belen Garcia
 function mostrar() {
-	let estacionIngresada = document.getElementById("txtIdEstacion").value;
-	let destino = document.getElementById("txtIdDestino").value;
+	let estacionIngresada;
+	let destino;
+	let mensaje;
+
+	estacionIngresada = document.getElementById("txtIdEstacion").value;
+	destino = document.getElementById("txtIdDestino").value;
 
 	switch (estacionIngresada) {
 
@@ -9,10 +14,10 @@ function mostrar() {
 				case "Cataratas":
 				case "Cordoba":
 				case "Mar del plata":
-					alert("No se viaja");
+					mensaje = "No se viaja";
 					break;
 				case "Bariloche":
-					alert("se viaja");
+					mensaje = "se viaja";
 					break;
 			}
 			break;
@@ -20,24 +25,24 @@ function mostrar() {
 			switch (destino) {
 				case "Bariloche":
 				case "Cordoba":
-					alert("No se viaja");
+					mensaje = "No se viaja";
 					break;
 
 				case "Cataratas":
 				case "Mar del plata":
-					alert("se viaja");
+					mensaje = "se viaja";
 					break;
 			}
 			break;
 		case "Primavera":
 			switch (destino) {
 				case "Bariloche":
-					alert("No se viaja");
+					mensaje = "No se viaja";
 					break;
 				case "Cordoba":
 				case "Cataratas":
 				case "Mar del plata":
-					alert("se viaja");
+					mensaje = "se viaja";
 					break;
 			}
 			break;
@@ -47,12 +52,13 @@ function mostrar() {
 				case "Cordoba":
 				case "Cataratas":
 				case "Mar del plata":
-					alert("se viaja");
+					mensaje = "se viaja";
 					break;
 			}
 			break;
 
 	}
+	alert(mensaje);
 
 
 }//FIN DE LA FUNCIÓN

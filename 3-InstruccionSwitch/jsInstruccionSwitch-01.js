@@ -19,5 +19,6 @@ function mostrar()
 			mensaje = "Felices fiesta!!!.";
 		break;
 	}
+	alert(mensaje);
 
 }//FIN DE LA FUNCIÓN

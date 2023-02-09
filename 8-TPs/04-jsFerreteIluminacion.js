@@ -10,6 +10,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 
  //Ángeles Belén García 
+ /*
 function CalcularPrecio() {
     let precio= 35;
     let cantidad;
@@ -50,6 +51,84 @@ function CalcularPrecio() {
         descuento = 50;
     }
 // ejemplo con 5 lamparitas de marca OSRAM 
+    precioConDescuento = precio - precio * descuento / 100;
+    //      24,5             35 -  35     *  30     / 1000
+    document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
+    importefinal = precioConDescuento * cantidad;
+    //     122,5               24,5           * 5
+
+    if (importefinal > 120) {
+        iibb = importefinal * 10 / 100;
+        //12,25     122,5   *10 /  100
+        importefinal += iibb;
+        // 134,75            122,5 + 12,25
+        mensaje = "Total: $ " + importefinal + ". Usted pago $ " + iibb + " de IIBB.";
+        //                         134,75                          12,25
+    } else {
+        mensaje = "Total: $ " + importefinal;
+                                
+    }
+    alert(mensaje); 
+}
+*/
+function CalcularPrecio() {
+    let precio= 35;
+    let cantidad;
+    let marca;
+    let descuento = 0;
+    let importefinal;
+    let iibb;
+    let precioConDescuento;
+    let mensaje; 
+
+    cantidad = parseInt(document.getElementById("txtIdCantidad").value);
+    marca = document.getElementById("Marca").value;
+
+    switch(cantidad){
+        case 1:
+        case 2: 
+        descuento = 0;
+        break;
+        case 3:
+            switch(marca){
+                case "ArgentinaLuz":
+                    descuento = 15;
+                    break;
+                case "FelipeLamparas":
+                    descuento = 10;
+                    break;
+                default:
+                    descuento = 5;
+                break; 
+            }
+            break;
+        case 4:
+            switch(marca){
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    descuento = 25;
+                break;
+                default:
+                    descuento = 20;
+                break; 
+            }
+            break;
+        case 5: 
+            switch(marca){
+                case "ArgentinaLuz":
+                    descuento = 40;
+                break;
+                default:
+                    descuento = 30;
+                break;
+            }
+            break;
+        default:
+            descuento = 50;
+        break; 
+    }
+
+    // ejemplo con 5 lamparitas de marca OSRAM 
     precioConDescuento = precio - precio * descuento / 100;
     //      24,5             35 -  35     *  30     / 1000
     document.getElementById("txtIdprecioDescuento").value = precioConDescuento;

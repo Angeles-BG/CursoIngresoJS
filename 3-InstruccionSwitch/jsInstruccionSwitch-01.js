@@ -1,23 +1,23 @@
+//Ángeles Belén García 
 function mostrar()
 {
 	//tomo el mes
 	let mes = document.getElementById("txtIdMes").value;
+	let mensaje; 
 	
 	switch(mes){
 		case "Enero": 
-		alert("que comiences bien el año!!!.");
+			mensaje = "que comiences bien el año!!!.";
 		break;
 		case "Marzo": 
-		alert("a clases!!!.");
+			mensaje = "a clases!!!.";
 		break;
 		case "Julio":
-		 alert("se vienen las vacaciones!!!.");
+		 	mensaje = "se vienen las vacaciones!!!.";
 		break;
 		case "Diciembre": 
-		alert("Felices fiesta!!!.");
+			mensaje = "Felices fiesta!!!.";
 		break;
 	}
-
- 
 
 }//FIN DE LA FUNCIÓN

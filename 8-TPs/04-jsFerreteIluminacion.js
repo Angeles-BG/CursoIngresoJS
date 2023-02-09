@@ -14,7 +14,7 @@ function CalcularPrecio() {
     let precio= 35;
     let cantidad;
     let marca;
-    let descuento;
+    let descuento = 0;
     let importefinal;
     let iibb;
     let precioConDescuento;
@@ -24,7 +24,7 @@ function CalcularPrecio() {
     marca = document.getElementById("Marca").value;
 
 
-    if (cantidad == 1 || cantidad == 2) {
+    if (cantidad < 3) {
         descuento = 0;
     } else if (cantidad == 3 ) {
         if (marca == "ArgentinaLuz") {

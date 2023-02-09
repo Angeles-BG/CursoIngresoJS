@@ -1,16 +1,19 @@
+//Angeles Belen Garcia
 function mostrar() {
-	let destinoIngresado = document.getElementById("txtIdDestino").value;
+	let destinoIngresado;
+	let mensaje;
+	destinoIngresado = document.getElementById("txtIdDestino").value;
 
 	switch (destinoIngresado) {
 		case "Ushuaia":
 		case "Bariloche":
-			alert("Hace Frio");
-			break;
-
+			mensaje = "Hace Frio";
+		break;
 		case "Mar del plata":
 		case "Cataratas":
-			alert("Hace calor");
-			break;
+			mensaje = "Hace calor";
+		break;
 	}
+	alert(mensaje);
 
 }//FIN DE LA FUNCIÓN

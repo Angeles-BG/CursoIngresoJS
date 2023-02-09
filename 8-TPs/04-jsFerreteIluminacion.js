@@ -72,7 +72,7 @@ function CalcularPrecio() {
 }
 */
 function CalcularPrecio() {
-    let precio = 35;
+    let precio 
     let cantidad;
     let marca;
     let descuento = 0;
@@ -81,6 +81,7 @@ function CalcularPrecio() {
     let precioConDescuento;
     let mensaje;
 
+    precio = 35;
     cantidad = parseInt(document.getElementById("txtIdCantidad").value);
     marca = document.getElementById("Marca").value;
 

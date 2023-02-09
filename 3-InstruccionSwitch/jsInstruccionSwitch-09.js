@@ -1,52 +1,43 @@
 function mostrar() {
-	let estacionIngresada = document.getElementById("txtIdEstacion").value;
-	let destino = document.getElementById("txtIdDestino").value;
-	const BASE = 15000;
-	let aumento;
-	let descuento;
+	let estacionIngresada;
+	let destino;
+	let base;
+	let porcentaje;
 	let preciofinal;
+	let calculoPorciento;
+	let mensaje;
 
+	estacionIngresada = document.getElementById("txtIdEstacion").value;
+	destino = document.getElementById("txtIdDestino").value;
+	base = 15000;
+	porcentaje = 0;
 
 	switch (estacionIngresada) {
 		case "Invierno":
 			switch (destino) {
 				case "Bariloche":
-					aumento = BASE * 20 / 100;
-					preciofinal = aumento + BASE;
-					alert("El precio de su estadia es de $ " + preciofinal);
+					porcentaje = 20;
 					break;
 				case "Cataratas":
 				case "Cordoba":
-					descuento = BASE * 10 / 100;
-					preciofinal = BASE - descuento;
-					alert("El precio de su estadia es de $ " + preciofinal);
+					porcentaje = -10;
 					break;
 				case "Mar del plata":
-					descuento = BASE * 20 / 100;
-					preciofinal = BASE - descuento;
-					alert("El precio de su estadia es de $ " + preciofinal);
+					porcentaje = -20;
 					break;
-
 			}
 			break;
-
 		case "Verano":
 			switch (destino) {
 				case "Bariloche":
-					descuento = BASE * 20 / 100;
-					preciofinal = BASE - descuento;
-					alert("El precio de su estadia es de $ " + preciofinal);
+					porcentaje = -20;
 					break;
 				case "Cataratas":
 				case "Cordoba":
-					aumento = BASE * 10 / 100;
-					preciofinal = aumento + BroadcastChannel;
-					alert("El precio de su estadia es de $ " + preciofinal);
+					porcentaje = 10;
 					break;
 				case "Mar del plata":
-					aumento = BASE * 20 / 100;
-					preciofinal = aumento + BASE;
-					alert("El precio de su estadia es de $ " + preciofinal);
+					porcentaje = 20;
 					break;
 			}
 			break;
@@ -56,16 +47,23 @@ function mostrar() {
 				case "Cataratas":
 				case "Mar del plata":
 				case "Bariloche":
-					aumento = BASE * 10 / 100;
-					preciofinal = aumento + BASE;
-					alert("El precio de su estadia es de $ " + preciofinal);
+					porcentaje = 10;
 					break;
 				case "Cordoba":
-					alert("El precio de su estadia es de $ " + BASE);
+					porcentaje = 0;
 					break;
 			}
 			break;
-
 	}
+	if (porcentaje == 0) {
+		mensaje = "El precio final de su viaje sera de $" + base;
+	} else {
+		calculoPorciento = base * porcentaje / 100;
+		preciofinal = base + calculoPorciento;
+		mensaje = "El precio final de su viaje sera de $" + preciofinal;
+	}
+
+
+	alert(mensaje);
 
 }//FIN DE LA FUNCIÓN

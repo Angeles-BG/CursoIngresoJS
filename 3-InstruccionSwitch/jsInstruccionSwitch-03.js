@@ -1,10 +1,13 @@
+//Angeles Belen Garcia
 function mostrar()
 {
-	let mes = document.getElementById("txtIdMes").value;
+	let mes;
+	let mensaje; 
+	mes = document.getElementById("txtIdMes").value;
 	
 switch(mes){
 	case "Febrero": 
-	alert(" Este mes no tiene más de 29 días.");
+		mensaje = " Este mes no tiene más de 29 días.";
 	break;
 	case "Enero": 
 	case "Marzo": 
@@ -17,11 +20,13 @@ switch(mes){
 	case "Octubre": 
 	case "Noviembre": 
 	case "Diciembre": 
-	alert( "Este mes tiene 30 o más días");
+		mensaje = "Este mes tiene 30 o más días";
 	break;
 //cuando el programa no entra a ningun case por defecto entrara a este. 
 	default: 
-	alert("debe seleccionar un mes valido");
+		mensaje = "debe seleccionar un mes valido";
+	break;
 } 
+alert(mensaje);
 
 }//FIN DE LA FUNCIÓN

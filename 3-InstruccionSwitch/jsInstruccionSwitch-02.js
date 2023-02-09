@@ -1,8 +1,10 @@
 //Ángeles Belén García
 function mostrar()
 {
-	let mes = document.getElementById("txtIdMes").value;
+	let mes;
 	let mensaje;
+	mes = document.getElementById("txtIdMes").value;
+	
 
 switch(mes){
 	case "Enero": 

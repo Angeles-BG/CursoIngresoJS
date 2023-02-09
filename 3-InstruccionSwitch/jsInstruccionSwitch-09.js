@@ -62,8 +62,6 @@ function mostrar() {
 		preciofinal = base + calculoPorciento;
 		mensaje = "El precio final de su viaje sera de $" + preciofinal;
 	}
-
-
 	alert(mensaje);
 
 }//FIN DE LA FUNCIÓN

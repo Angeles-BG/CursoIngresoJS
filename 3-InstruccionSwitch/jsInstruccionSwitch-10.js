@@ -11,13 +11,11 @@ function mostrar() {
 
 		case "Invierno":
 			switch (destino) {
-				case "Cataratas":
-				case "Cordoba":
-				case "Mar del plata":
-					mensaje = "No se viaja";
-					break;
 				case "Bariloche":
 					mensaje = "se viaja";
+					break;	
+			    default: 
+					mensaje = "No se viaja";
 					break;
 			}
 			break;
@@ -27,7 +25,6 @@ function mostrar() {
 				case "Cordoba":
 					mensaje = "No se viaja";
 					break;
-
 				case "Cataratas":
 				case "Mar del plata":
 					mensaje = "se viaja";
@@ -39,24 +36,14 @@ function mostrar() {
 				case "Bariloche":
 					mensaje = "No se viaja";
 					break;
-				case "Cordoba":
-				case "Cataratas":
-				case "Mar del plata":
+				default:
 					mensaje = "se viaja";
 					break;
 			}
 			break;
 		case "Otoño":
-			switch (destino) {
-				case "Bariloche":
-				case "Cordoba":
-				case "Cataratas":
-				case "Mar del plata":
-					mensaje = "se viaja";
-					break;
-			}
+			mensaje = "se viaja";
 			break;
-
 	}
 	alert(mensaje);
 

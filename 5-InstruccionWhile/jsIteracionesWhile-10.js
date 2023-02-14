@@ -14,33 +14,43 @@ function mostrar() {
 	//declarar contadores y variables 
 	let respuesta;
 	let numero;
-	let sumaNegativos = 0;
-	let sumaPositivos = 0;
-	let cantPositivos = 0;
-	let cantNegativos = 0;
-	let cantCeros = 0;
-	let cantPares = 0;
+	let sumaNegativos;
+	let sumaPositivos;
+	let cantPositivos;
+	let cantNegativos;
+	let cantCeros;
+	let cantPares;
 	let promedioPositivo;
 	let promedioNegativo;
 	let diferencia; 
 
-	do {
+	respuesta = "si";
+	sumaNegativos = 0;
+	sumaPositivos = 0;
+	cantPositivos = 0;
+	cantNegativos = 0;
+	cantCeros = 0;
+	cantPares = 0;
+	promedioPositivo = 0;
+	promedioNegativo = 0;
+
+	while (respuesta == "si" || respuesta == "SI" || respuesta == "Si"){
 		numero = parseInt(prompt("ingrese un numero"));
 		if (numero == 0){
-			cantCeros ++;
+			cantCeros = cantCeros + 1;
 		}else if (numero>0){
-			cantPositivos ++;
-			sumaPositivos += numero; 
+			cantPositivos = cantPositivos + 1;
+			sumaPositivos = sumaPositivos + numero; 
 		}else{
-			cantNegativos ++; 
-			sumaNegativos += numero; 
+			cantNegativos = cantNegativos + 1; 
+			sumaNegativos = sumaNegativos + numero; 
 		}
 		if ( numero % 2 == 0 ){ //condicion de paridad, para ver si un numero es par. 
-			cantPares ++; 
+			cantPares = cantPares + 1; 
 		}
 
-		respuesta = prompt("desea continuar? s/n");
-	} while (respuesta != "n");
+		respuesta = prompt("desea continuar? si/no");
+	} 
 
 	diferencia = cantPositivos - cantNegativos; 
 	promedioNegativo = sumaNegativos / cantNegativos;

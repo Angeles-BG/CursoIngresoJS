@@ -1,4 +1,5 @@
 /*
+Angeles Belen García
 Al presionar el botón pedir  números  
 hasta que el usuario quiera, mostrar:
 1-Suma de los negativos.
@@ -36,6 +37,9 @@ function mostrar() {
 
 	while (respuesta == "si" || respuesta == "SI" || respuesta == "Si"){
 		numero = parseInt(prompt("ingrese un numero"));
+		while (isNaN(numero)) {
+			numero = parseInt(prompt("Error. Ingrese un numero: "));
+		}
 		if (numero == 0){
 			cantCeros = cantCeros + 1;
 		}else if (numero>0){

@@ -17,7 +17,7 @@ function mostrar() {
 		i = i + 1;
 		numeroIngresado = parseFloat(prompt("Ingrese un numero"));
 		while (isNaN(numeroIngresado)) {
-			prompt("Error. Ingrese un numero: ");
+			numeroIngresado= parseInt(prompt("Error. Ingrese un numero: "));
 		}
 		contador = contador + 1; 
 		acumulador = acumulador + numeroIngresado;
@@ -32,7 +32,7 @@ function mostrar() {
 	for (let i = 0; i <5; i++) {
 		numeroIngresado = parseFloat(prompt("Ingrese un numero"));
 		while (isNaN(numeroIngresado)) {
-			prompt("Error. Ingrese un numero: ");
+			numeroIngresado= parseInt(prompt("Error. Ingrese un numero: "));
 		}
 		contador = contador + 1; 
 		acumulador = acumulador + numeroIngresado;

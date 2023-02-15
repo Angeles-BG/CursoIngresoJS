@@ -16,12 +16,15 @@ function mostrar() {
 	while (respuesta == "si" || respuesta == "SI" || respuesta == "Si")
 	{
 		numero = parseInt(prompt("Ingrese un numero: "));
+		while (isNaN(numero)) {
+			numero = parseInt(prompt("Error. Ingrese un numero: "));
+		}
 		if (numero >= 0) {
 			sumaPositivos = sumaPositivos + numero;
 		} else {
 			multiplicacionNegativos = multiplicacionNegativos * numero;
 		}
-		respuesta = prompt("¿Quiere ingresar mas numeros?");
+		respuesta = prompt("¿Quiere ingresar mas numeros? si/no");
 	}
 
 

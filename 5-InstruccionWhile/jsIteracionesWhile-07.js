@@ -17,6 +17,9 @@ function mostrar() {
 	while (respuesta == "si" || respuesta == "SI" || respuesta == "Si" )
 	{
 		numero = parseInt(prompt("Ingrese un numero: "));
+		while (isNaN(numero)) {
+			numero = parseInt(prompt("Error. Ingrese un numero: "));
+		}
 		acumulador += numero;
 		contador++;
 		respuesta = prompt("¿Quiere ingresar otro nuemro? si / no");

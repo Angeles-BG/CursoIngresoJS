@@ -60,14 +60,14 @@ function mostrar() {
 	promedioNegativo = sumaNegativos / cantNegativos;
 	promedioPositivo = sumaPositivos / cantPositivos; 
 
-	console.log("suma positivos: " + sumaPositivos);
-	console.log("suma negativos: " + sumaNegativos);
-	console.log("cantidad de positivos: " + cantPositivos);
-	console.log("Cantidad de negativos: " + cantNegativos);
-	console.log("Cantidad de ceros: " + cantCeros);
-	console.log("Cantidad de numeros pares: " + cantPares);
-	console.log("Promedio de numeros positivos: " + promedioPositivo);
-	console.log("Promedio de numeros negativos: " + promedioNegativo);
-	console.log("Diferencia entre positivos y negativos: " + diferencia); 
+	document.write("suma positivos: " + sumaPositivos + "<br>");
+	document.write("suma negativos: " + sumaNegativos + "<br>");
+	document.write("cantidad de positivos: " + cantPositivos + "<br>");
+	document.write("Cantidad de negativos: " + cantNegativos + "<br>");
+	document.write("Cantidad de ceros: " + cantCeros + "<br>");
+	document.write("Cantidad de numeros pares: " + cantPares + "<br>");
+	document.write("Promedio de numeros positivos: " + promedioPositivo + "<br>");
+	document.write("Promedio de numeros negativos: " + promedioNegativo + "<br>");
+	document.write("Diferencia entre positivos y negativos: " + diferencia + "<br>"); 
 
 }//FIN DE LA FUNCIÓN

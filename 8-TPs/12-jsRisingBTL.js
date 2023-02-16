@@ -49,14 +49,14 @@ function ComenzarIngreso ()
 
 	//Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
 	numeroLegajo = parseInt(prompt("Ingrse su numero de legajo: "));
-	while(isNaN(numeroLegajo) || numeroLegajo.length == 4 ){
+	while(isNaN(numeroLegajo)  ){
 		numeroLegajo = parseInt(prompt("Error-el numero debe ser valido. Ingrse su numero de legajo: "));
 	}
 	document.getElementById("txtIdLegajo").value = numeroLegajo;
 
 	//Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para nacionalizados.
 	nacionalidad = prompt("Ingrese su nacionalidad: “A” para argentinos, “E” para extranjeros, “N” para nacionalizados");
-	while (nacionalidad != "A" && nacionalidad != "E" && nacionalidad != "N" && nacionalidad != "a" && nacionalidad != "e" && nacionalidad != "n" && nacionalidad == ""){
+	while (nacionalidad != "A" && nacionalidad != "E" && nacionalidad != "N" && nacionalidad != "a" && nacionalidad != "e" && nacionalidad != "n" ){
 		nacionalidad = prompt("Error-Debe ser una nacionalidad valida. Ingrese su nacionalidad: “A” para argentinos, “E” para extranjeros, “N” para nacionalizados");
 	}
 	document.getElementById("txtIdNacionalidad").value = nacionalidad;

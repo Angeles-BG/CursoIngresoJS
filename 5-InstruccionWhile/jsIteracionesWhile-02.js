@@ -25,18 +25,15 @@ function mostrar()
 	let menorVeinte; 
 	let flag;
 
-	flag = 0; 
+	mayorDiez = 0;
+	menorVeinte = 0; 
 	
-	for(let i=0; i==5 ; i++){
+	for(let i=0; i<5 ; i++){
 		numero = parseInt(prompt("Ingrese un numero: "));
 		while (isNaN(numero)) {
 			numero= parseInt(prompt("Error. Ingrese un numero "));
 		}
-		if(flag == 0 ){
-			mayorDiez = numero;
-			menorVeinte = numero; 
-			flag = 1; 
-		}else if(numero>9){
+		if(numero>9){
 			mayorDiez = mayorDiez +1;
 		}else if(numero<21){
 			menorVeinte = menorVeinte +1;

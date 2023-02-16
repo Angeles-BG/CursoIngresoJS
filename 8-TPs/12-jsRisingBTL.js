@@ -49,7 +49,7 @@ function ComenzarIngreso ()
 
 	//Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
 	numeroLegajo = parseInt(prompt("Ingrse su numero de legajo: "));
-	while(isNaN(numeroLegajo)  ){
+	while(isNaN(numeroLegajo) || numeroLegajo < 1000 || numeroLegajo>9999 ){
 		numeroLegajo = parseInt(prompt("Error-el numero debe ser valido. Ingrse su numero de legajo: "));
 	}
 	document.getElementById("txtIdLegajo").value = numeroLegajo;

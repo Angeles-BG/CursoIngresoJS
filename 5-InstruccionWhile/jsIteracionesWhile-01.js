@@ -72,7 +72,7 @@ function mostrar() {
 	while (respuesta == "si") {
 		nombre = prompt("Ingrese su nombre");
 		edad = parseInt(prompt("Ingrese su edad:"));
-		while (isNaN(edad)) {
+		while (isNaN(edad) || edad>123 || edad<1) {
 			edad= parseInt(prompt("Error. Ingrese su edad "));
 		}
 		if (flag == 0) {

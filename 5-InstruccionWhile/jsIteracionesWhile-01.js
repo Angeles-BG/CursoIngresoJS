@@ -7,7 +7,7 @@ b) sumar los impares
 c) sumar los pares
 d) Calcular el mayor de los numeros impares
 e) Calcular el mayor numero*/
-function mostrar()
+/*function mostrar()
 {
 	let i;
 	let contadorNumerosPares; 
@@ -37,7 +37,7 @@ function mostrar()
 			} 
 		}
 		if(i>mayorNumero){
-           mayorNumero = i; 
+		   mayorNumero = i; 
 		}
 		console.log(i);
 		i = i + 1;
@@ -52,3 +52,45 @@ function mostrar()
 	console.log("El mayor de los numeros es:" + mayorNumero);
 	
 }//FIN DE LA FUNCIÓN
+*/
+//While 1 bis- edad y nombre , informar el nombre de la persona mas vieja y la mas joven
+function mostrar() {
+	let nombre;
+	let edad;
+	let flag;
+	let viejoEdad;
+	let jovenEdad;
+	let viejoNombre;
+	let jovenNombre;
+	let respuesta;
+
+	flag = 0;
+	respuesta = "si"; 
+	viejoEdad = 0;
+	jovenEdad = 0;
+
+	while (respuesta == "si") {
+		nombre = prompt("Ingrese su nombre");
+		edad = parseInt(prompt("Ingrese su edad:"));
+		while (isNaN(edad)) {
+			edad= parseInt(prompt("Error. Ingrese su edad "));
+		}
+		if (flag == 0) {
+			viejoEdad = edad;
+			viejoNombre = nombre;
+			jovenEdad = edad;
+			jovenNombre = nombre;
+			flag = 1; 
+		} else if (viejoEdad < edad) {
+			viejoEdad = edad;
+			viejoNombre = nombre;
+		} else if (jovenEdad > edad) {
+			jovenEdad = edad;
+			jovenEdad = nombre;
+		}
+		respuesta = prompt("¿Quiere ingresar otra persona? si/no"); 
+	}
+	alert(viejoNombre+" fue la persona mas vieja con "+viejoEdad+" años");
+	alert(jovenNombre+" fue la persona mas joven con "+jovenEdad+" años");
+	
+}

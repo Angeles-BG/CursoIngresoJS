@@ -24,6 +24,8 @@ function mostrar() {
 	let promedioPositivo;
 	let promedioNegativo;
 	let diferencia; 
+	let mensajeUno;
+	let mensajeDos; 
 
 	respuesta = "si";
 	sumaNegativos = 0;
@@ -57,17 +59,25 @@ function mostrar() {
 	} 
 
 	diferencia = cantPositivos - cantNegativos; 
-	promedioNegativo = sumaNegativos / cantNegativos;
-	promedioPositivo = sumaPositivos / cantPositivos; 
 
+	if (cantPositivos == 0 || cantNegativos == 0 ){
+		mensajeUno = "Promedio de numeros positivos es 0 ";
+		mensajeDos = "Promedio de numeros negativos es 0 ";
+	}else{
+		promedioNegativo = sumaNegativos / cantNegativos;
+		promedioPositivo = sumaPositivos / cantPositivos; 
+		mensajeUno = "Promedio de numeros positivos: " + promedioPositivo + "<br>";
+		mensajeDos = "Promedio de numeros negativos: " + promedioNegativo + "<br>";
+	}
+	
 	document.write("suma positivos: " + sumaPositivos + "<br>");
 	document.write("suma negativos: " + sumaNegativos + "<br>");
 	document.write("cantidad de positivos: " + cantPositivos + "<br>");
 	document.write("Cantidad de negativos: " + cantNegativos + "<br>");
 	document.write("Cantidad de ceros: " + cantCeros + "<br>");
 	document.write("Cantidad de numeros pares: " + cantPares + "<br>");
-	document.write("Promedio de numeros positivos: " + promedioPositivo + "<br>");
-	document.write("Promedio de numeros negativos: " + promedioNegativo + "<br>");
+	document.write(mensajeUno + "<br>");
+	document.write(mensajeDos + "<br>");
 	document.write("Diferencia entre positivos y negativos: " + diferencia + "<br>"); 
 
 }//FIN DE LA FUNCIÓN

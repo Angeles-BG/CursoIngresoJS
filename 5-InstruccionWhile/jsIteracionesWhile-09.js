@@ -75,7 +75,7 @@ function mostrar() {
 			numeroIngresado = parseInt(prompt("Error. Ingrese un numero: "));
 		}
 		//maximos y minimos 
-		if (banderaDelPrimero == 0) { 
+		if (banderaDelPrimero == 0 ) {
 			maximo = numeroIngresado;
 			minimo = numeroIngresado;
 			banderaDelPrimero = 1;
@@ -86,27 +86,35 @@ function mostrar() {
 			minimo = numeroIngresado;
 		}
 		//maximo negativos y minimos par 
-		if (banderaDelPrimeroNegativo == 0) {
-			maximoNegativo = numeroIngresado;
-			banderaDelPrimeroNegativo = 1;
-		} else if (numeroIngresado < 0 && numeroIngresado > maximoNegativo) {
-			maximoNegativo = numeroIngresado;
-		}
-		if (banderaDelPrimeroPar == 0) {
-			minimoPar = numeroIngresado;
-			banderaDelPrimeroPar = 1;
-		} else if (numeroIngresado % 2 == 0 && numeroIngresado < minimoPar) {
-			minimoPar = numeroIngresado;
+
+		if (numeroIngresado < 0 ) {
+			if(banderaDelPrimeroNegativo == 0  || numeroIngresado > maximoNegativo){
+				maximoNegativo = numeroIngresado;
+				banderaDelPrimeroNegativo = 1;
+			}
+		} 
+
+		if (numeroIngresado % 2 == 0 ) {
+			if( banderaDelPrimeroPar == 0 ||  numeroIngresado < minimoPar){
+				minimoPar = numeroIngresado;
+				banderaDelPrimeroPar = 1;
+			}
 		}
 		respuesta = prompt("desea continuar? si/no");
 	}//FIN DEL WHILE 
 
-if (maximoNegativo == 0) {
-	console.log("no hay numeros negativos");
-} else if (minimoPar == 0) {
-	console.log("no hay numeros pares");
-}
+	if (maximoNegativo == 0) {
+		console.log("no hay numeros negativos");
+	} else {
+		console.log("El maximo de los negativos es: " + maximoNegativo);
+	}
 
-document.getElementById("txtIdMaximo").value = maximo;
-document.getElementById("txtIdMinimo").value = minimo;
+	if (minimoPar == 0) {
+		console.log("no hay numeros pares");
+	} else {
+		console.log("El minimo de los pares es: " + minimoPar);
+	}
+
+	document.getElementById("txtIdMaximo").value = maximo;
+	document.getElementById("txtIdMinimo").value = minimo;
 }//FIN DE LA FUNCIÓN

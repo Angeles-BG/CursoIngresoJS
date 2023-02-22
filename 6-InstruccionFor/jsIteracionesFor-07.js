@@ -18,10 +18,11 @@ function mostrar()
 		numero = parseInt(prompt("Error. Ingrese un numero: "));
 	}
 
-	for(let i=1; i <= numero; i++){
+	for(let i=1; i < numero; i++){
 		contador = contador +1; 
 		if (numero % contador  == 0 ){
 			cantidadDeDivisores = cantidadDeDivisores +1; 
+			console.log(contador + " es divisor de "+numero);
 		}
 	}
 	mensaje = "La cantidad de divisores del "+ numero +" (del 1 a "+ numero +") es: " + cantidadDeDivisores; 

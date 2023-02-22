@@ -19,27 +19,22 @@ con números DESCENDENTES, desde el 10 al 1.*/
 //la cantidad de números que son mayores que 10 y menores 20 (inclusive en ambos casos)
 function mostrar()
 {
-	let numero;
-	let mayorDiez;
-	let menorVeinte; 
+	let numero; 
+	let contador;
 	let flag;
 
-	mayorDiez = 0;
-	menorVeinte = 0; 
+	contador=0; 
 	
 	for(let i=0; i<5 ; i++){
 		numero = parseInt(prompt("Ingrese un numero: "));
 		while (isNaN(numero)) {
 			numero= parseInt(prompt("Error. Ingrese un numero "));
 		}
-		if(numero>9){
-			mayorDiez = mayorDiez +1;
-		}else if(numero<21){
-			menorVeinte = menorVeinte +1;
+		if(numero>9 && numero<21){
+			contador = contador +1; 
 		}
 	}
-	alert("la cantidad de numeros mayores a diez es: "+ mayorDiez);
-	alert("la cantidad de numeros menores a 20 es: "+menorVeinte); 
+	alert("la cantidad de numeros mayores a diez y menores a 20 es: "+ contador);
 
 }//FIN DE LA FUNCIÓN
 */
@@ -49,15 +44,13 @@ function mostrar()
 function mostrar()
 {
 	let numero;
-	let mayorDiez;
-	let menorVeinte; 
+	let contador; 
 	let promedio;
 	let ingresos; 
 	let respuesta; 
 	let sumaNumeros; 
 
-	mayorDiez = 0;
-	menorVeinte = 0; 
+	contador = 0; 
 	respuesta = "si"; 
 	sumaNumeros = 0;
 	ingresos = 0; 
@@ -67,19 +60,17 @@ function mostrar()
 		while (isNaN(numero)) {
 			numero= parseInt(prompt("Error. Ingrese un numero "));
 		}
-		if(numero>9){
-			mayorDiez = mayorDiez +1;
+		if(numero>9 && numero<21){
+			contador = contador +1;
 			sumaNumeros = numero + sumaNumeros; 
-		}else if(numero<21){
-			menorVeinte = menorVeinte +1;
-			sumaNumeros = numero + sumaNumeros;
 		}
 		ingresos = ingresos +1; 
 		respuesta = prompt("¿Quiere ingresar otro numero? si/no"); 
 	}
+
 	promedio = sumaNumeros /ingresos;
-	alert("la cantidad de numeros mayores a diez es: "+ mayorDiez);
-	alert("la cantidad de numeros menores a 20 es: "+menorVeinte); 
+
+	alert("la cantidad de numeros mayores a diez y menores a 20 es: "+ contador);
 	alert("El promedio de los numeros que cumplen con la condicon de ser menor a 20 y/ o mayor a 10 es: " + promedio); 
 
 }//FIN DE LA FUNCIÓN

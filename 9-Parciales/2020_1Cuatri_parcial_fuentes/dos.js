@@ -22,14 +22,12 @@ function mostrar() {
   let importeTotalSinDescuento;
   let acumuladorBolsasArena;
   let acumuladorBolsasCal;
-  let acumuladorBolsasCemento;
-  let precioArena;
-  let precioCal;
-  let precioCemento;
+  let acumuladorBolsasCemento; 
   let tipoConMasCantidadDeBolsas;
   let tipoMasCaro;
   let banderaMasCara;
   let precioMasCaro; 
+  let mensaje;
 
   banderaMasCara = 0; 
   respuesta = "si";
@@ -89,7 +87,9 @@ function mostrar() {
 
   if (porcentaje != 0) {
     importeTotalConDescuento = importeTotalSinDescuento - porcentaje * importeTotalSinDescuento / 100;
-    console.log("El importe a pagar con descuento es de: $" + importeTotalConDescuento);
+    mensaje = "El importe a pagar con descuento es de: $" + importeTotalConDescuento;
+  }else{
+    mensaje = "El importe a pagar sin descuento es de: $" + importeTotalSinDescuento;
   }
 
   if (acumuladorBolsasArena > acumuladorBolsasCal && acumuladorBolsasArena > acumuladorBolsasCemento) {
@@ -100,7 +100,7 @@ function mostrar() {
     tipoConMasCantidadDeBolsas = "cemento";
   }
 
-  console.log("El importe a pagar sin descuento es de: $" + importeTotalSinDescuento);
+  console.log(mensaje);
   console.log("La mayor cantidad de bolsas son de " + tipoConMasCantidadDeBolsas);
   console.log("El material mas caro es " + tipoMasCaro);
 }

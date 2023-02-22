@@ -52,7 +52,7 @@ function mostrar() {
 			sexoAlumno = prompt("Ingrese un sexo valido: 'f' o 'm' o 'b' ");
 		}	
 		notaAlumno = parseInt(prompt("Ingrese la nota del alumno: "));
-		while (isNaN(notaAlumno) && notaAlumno < -1 && notaAlumno > 11) {
+		while (isNaN(notaAlumno) && notaAlumno < 0 && notaAlumno > 11) {
 			notaAlumno = parseInt(prompt("Error. Ingrese una nota valida: "));
 		}
 		totalDeNotas = totalDeNotas + notaAlumno;
@@ -64,7 +64,7 @@ function mostrar() {
 			notaMasBaja = notaAlumno;
 			sexoNotaBaja = sexoAlumno;
 		}
-		if(notaAlumno>5 && sexoAlumno == "m" || sexoAlumno == "M") {
+		if(notaAlumno>5 && (sexoAlumno == "m" || sexoAlumno == "M")) {
 			varonesNotaMayorSeis = varonesNotaMayorSeis +1
 		}
 		if(notaAlumno <4){

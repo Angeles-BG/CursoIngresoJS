@@ -14,30 +14,29 @@ function mostrar() {
   let tipoDeMaterial;
   let cantidadDeBolsas;
   let precioPorBolsa;
-
   let porcentaje;
   let respuesta;
   let totalDeBolsas;
   let total;
-
   let importeTotalConDescuento;
   let importeTotalSinDescuento;
-
-  let cantidadBolsasArena;
-  let cantidadBolsasCal;
-  let cantidadBolsasCemento;
+  let acumuladorBolsasArena;
+  let acumuladorBolsasCal;
+  let acumuladorBolsasCemento;
   let precioArena;
   let precioCal;
   let precioCemento;
-
   let tipoConMasCantidadDeBolsas;
-  let tipoMasCaro; 
+  let tipoMasCaro;
+  let banderaMasCara;
+  let precioMasCaro; 
 
+  banderaMasCara = 0; 
   respuesta = "si";
   porcentaje = 0;
-  cantidadBolsasArena = 0;
-  cantidadBolsasCal = 0; 
-  cantidadBolsasCemento = 0; 
+  acumuladorBolsasArena = 0;
+  acumuladorBolsasCal = 0;
+  acumuladorBolsasCemento = 0;
 
   while (respuesta == "si") {
     tipoDeMaterial = prompt("Ingrese el tipo de material: arena, cal, cemento");
@@ -45,7 +44,7 @@ function mostrar() {
       tipoDeMaterial = prompt("Error- Ingrese el tipo de material: arena, cal, cemento");
     }
     cantidadDeBolsas = parseInt(prompt("Ingrese la cantidad de bolsas: "));
-    while (isNaN(cantidadDeBolsas)) {
+    while (isNaN(cantidadDeBolsas) || cantidadDeBolsas < 1 || cantidadDeBolsas > 10000) {
       cantidadDeBolsas = parseInt(prompt("Error- Ingrese la cantidad de bolsas: "));
     }
     precioPorBolsa = parseInt(prompt("Ingrse el precio por bolsa: "));
@@ -54,32 +53,38 @@ function mostrar() {
     }
 
     total = precioPorBolsa * cantidadDeBolsas;
-
     totalDeBolsas = totalDeBolsas + cantidadDeBolsas;
-    importeTotalSinDescuento = inporteTotalSinDescuento + total;
-
-    if (totalDeBolsas > 10 && totalDeBolsas < 30) {
-      porcentaje = 15;
-    } else if (totalDeBolsas > 30) {
-      porcentaje = 25;
-    }
+    importeTotalSinDescuento = importeTotalSinDescuento + total;
 
     switch (tipoDeMaterial) {
       case "arena":
-        cantidadBolsasArena = cantidadBolsasArena + cantidadDeBolsas;
-        precioArena = precioPorBolsa;
+        acumuladorBolsasArena = acumuladorBolsasArena + cantidadDeBolsas;
         break;
       case "cal":
-        cantidadBolsasCal = cantidadBolsasCal + cantidadDeBolsas;
-        precioCal = precioPorBolsa;
+        acumuladorBolsasCal = acumuladorBolsasCal + cantidadDeBolsas;
         break;
       case "cemento":
-        cantidadBolsasCemento = cantidadBolsasCemento + cantidadDeBolsas;
-        precioCemento = precioPorBolsa;
+        acumuladorBolsasCemento = acumuladorBolsasCemento + cantidadDeBolsas;
         break;
     }
 
+    if(banderaMasCara == 0 ||precioPorBolsa > precioMasCaro ){
+      tipoMasCaro = tipoDeMaterial;
+      precioMasCaro = precioPorBolsa; 
+      banderaMasCara = 1; 
+    }
+
     respuesta = prompt("¿Desea ingresar mas datos?");
+  }//Fin del while 
+
+
+
+  if (totalDeBolsas > 29) {
+    porcentaje = 25;
+  } else if (totalDeBolsas > 9) {
+    porcentaje = 15;
+  } else {
+    porcentaje = 0;
   }
 
   if (porcentaje != 0) {
@@ -87,31 +92,15 @@ function mostrar() {
     console.log("El importe a pagar con descuento es de: $" + importeTotalConDescuento);
   }
 
-  if (cantidadBolsasArena > cantidadBolsasCal) {
-    if (cantidadBolsasArena > cantidadBolsasCemento) {
-      tipoConMasCantidadDeBolsas = "arena";
-    } else {
-      tipoConMasCantidadDeBolsas = "cemento";
-    }
-  } else if (cantidadBolsasCal > cantidadBolsasCemento) {
+  if (acumuladorBolsasArena > acumuladorBolsasCal && acumuladorBolsasArena > acumuladorBolsasCemento) {
+    tipoConMasCantidadDeBolsas = "arena";
+  } else if (acumuladorBolsasCal > acumuladorBolsasCemento) {
     tipoConMasCantidadDeBolsas = "cal";
   } else {
     tipoConMasCantidadDeBolsas = "cemento";
   }
 
-  if (precioArena > precioCal) {
-    if (precioArena > precioCemento) {
-      tipoMasCaro= "arena";
-    } else {
-      tipoMasCaro = "cemento";
-    }
-  } else if (precioCal > precioCemento) {
-    tipoMasCaro = "cal";
-  } else {
-    tipoMasCaro = "cemento";
-  }
-
-  console.log("El importe a pagar sin descuento es de: $"+importeTotalSinDescuento);
-  console.log("La mayor cantidad de bolsas son de "+tipoConMasCantidadDeBolsas);
-  console.log("El material mas caro es "+tipoMasCaro); 
+  console.log("El importe a pagar sin descuento es de: $" + importeTotalSinDescuento);
+  console.log("La mayor cantidad de bolsas son de " + tipoConMasCantidadDeBolsas);
+  console.log("El material mas caro es " + tipoMasCaro);
 }

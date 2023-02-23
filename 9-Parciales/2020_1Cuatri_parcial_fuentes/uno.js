@@ -82,7 +82,7 @@ function mostrar() {
 				acumuladorBarbijo = acumuladorBarbijo + unidadesProducto;
 				break;
 			case "jabon":
-				contadorJabon = contadorJabon + 1 ;
+				contadorJabon = contadorJabon + 1;
 				acumuladorJabon = acumuladorJabon + unidadesProducto;
 				break;
 		}

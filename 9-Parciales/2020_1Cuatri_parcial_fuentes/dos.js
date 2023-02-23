@@ -75,8 +75,6 @@ function mostrar() {
     respuesta = prompt("¿Desea ingresar mas datos?");
   }//Fin del while 
 
-
-
   if (totalDeBolsas > 29) {
     porcentaje = 25;
   } else if (totalDeBolsas > 9) {

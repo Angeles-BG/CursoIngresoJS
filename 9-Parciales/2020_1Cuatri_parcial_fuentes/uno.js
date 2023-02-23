@@ -17,6 +17,7 @@ If y una Bandera. Contador de cada uno de los tipos, acumulador de cantidades de
 c) Cuántas unidades de jabones hay en total
 Contador de cada uno de los tipos, acumulador de cantidades de cada uno de los tipos(Switch)
 */
+/*
 function mostrar() {
 
 	let tipoProducto;
@@ -105,3 +106,156 @@ function mostrar() {
 	console.log("El tipo con mas unidades es: " + mayorTipo);
 	console.log("El promedio de compra del tipo con mas unidades es: " + promedioCompra);
 }
+*/
+/*
+Parcial 1 2020 bis: /"Super chino" Se pide el ingreso de mercadería de un supermercado , 
+hasta que el usuario quiera,se pide :
+tipo(limpieza , comestible , otros)solo estos tres tipos
+nombre del producto
+importe del producto (no mayor a 1000 pesos)
+procedencia(importado, nacional, elaborado)
+Peso (no mayor a 30 kilos)
+
+informar SOLO SI HAY
+a) el NOMBRE del mas pesado de los comestibles
+b) el NOMBRE del mas caro de todos los productos
+c) el NOMBRE del mas barato de los elaborados
+d)el tipo de mercadería que mas aparece
+e)el porcentaje de productos elaborados por sobre el total
+f) el promedio de pesos por cada tipo ingresado/
+*/
+function mostrar() {
+	let tipo;
+	let nombre;
+	let importeProducto;
+	let procedencia;
+	let peso;
+	let banderaMasPesado;
+	let masPesadoNombre;
+	let masPesadoPeso;
+	let banderaMasCaro;
+	let precioMasCaro;
+	let nombreMasCaro;
+	let banderaMasBarato;
+	let precioMasBarato;
+	let nombreMasBarato;
+	let contadorLimpieza;
+	let contadorComestible;
+	let contadorOtro;
+	let mayorTipo;
+	let pesoComestible;
+	let pesoLimpieza;
+	let pesoOtro;
+	let porcentaje;
+	let totalIngresos;
+	let promedioPesoComestible;
+	let promedioPesoLimpieza;
+	let promedioPesoOtro;
+	let elaborado;
+
+	let respuesta = "si";
+	banderaMasPesado = 0;
+	banderaMasCaro = 0;
+	banderaMasBarato = 0;
+	contadorComestible = 0;
+	contadorLimpieza = 0;
+	contadorOtro = 0;
+	pesoComestible = 0;
+	pesoLimpieza = 0;
+	pesoOtro = 0;
+	totalIngresos = 0;
+	elaborado = 0;
+
+
+	while (respuesta == "si") {
+		tipo = prompt("Ingrese el tipo de producto: limpieza , comestible , otros");
+		while (tipo != "limpieza" && tipo != "comestible" && tipo != "otro") {
+			tipo = prompt("Error- Ingrese el tipo de producto: limpieza , comestible , otros");
+		}
+		nombre = prompt("Ingrese el nombre: ");
+		importeProducto = parseFloat(prompt("Ingrese el importe:  "));
+		while (isNaN(importeProducto) || importeProducto < 1 || importeProducto > 1000) {
+			importeProducto = parseFloat(prompt("Error- Ingrese el importe:  "));
+		}
+		procedencia = prompt("Ingrese el procedencia de producto: importado, nacional o elaborado");
+		while (procedencia != "importado" && procedencia != "nacional" && procedencia != "elaborado") {
+			procedencia = prompt("Error- Ingrese el procedencia de producto: importado, nacional o elaborado");
+		}
+		peso = parseFloat(prompt("Ingrese el peso:  "));
+		while (isNaN(peso) || peso < 1 || peso > 30) {
+			peso = parseFloat(prompt("Error- Ingrese el peso:  "));
+		}
+		if (banderaMasPesado == 0 || peso > masPesadoPeso) {
+			masPesadoNombre = nombre;
+			masPesadoPeso = peso;
+			banderaMasPesado = 1;
+		}
+		if (banderaMasCaro == 0 || importeProducto > precioMasCaro) {
+			nombreMasCaro = nombre;
+			precioMasCaro = importeProducto;
+			banderaMasCaro = 1;
+		}
+		if (banderaMasBarato == 0 || importeProducto < precioMasBarato) {
+			nombreMasBarato = nombre;
+			precioMasBarato = importeProducto;
+			banderaMasBarato = 1;
+		}
+		switch (tipo) {
+			case "limpieza":
+				contadorLimpieza = contadorLimpieza + 1;
+				pesoLimpieza = pesoLimpieza + peso;
+				break;
+			case "comestible":
+				contadorComestible = contadorComestible + 1;
+				pesoComestible = pesoComestible + peso;
+				break;
+			case "otro":
+				contadorOtro = contadorOtro + 1;
+				pesoOtro = pesoOtro + peso;
+				break;
+		}
+
+		if (procedencia == "elaborado") {
+			elaborado = elaborado + 1;
+		}
+
+		totalIngresos = totalIngresos + 1;
+
+		respuesta = prompt("¿Desea seguir ingresando datos? si o no");
+	}
+
+	if (contadorComestible > contadorLimpieza && contadorComestible > contadorOtro) {
+		mayorTipo = "comestible";
+	} else if (contadorLimpieza > contadorOtro) {
+		mayorTipo = " limpieza";
+	} else {
+		mayorTipo = " otro";
+	}
+
+	porcentaje = elaborado * 100 / totalIngresos;
+	if (contadorLimpieza != 0) {
+		promedioPesoLimpieza = pesoLimpieza / contadorLimpieza;
+	} else {
+		promedioPesoLimpieza = 0;
+	}
+	if (contadorComestible != 0) {
+		promedioPesoComestible = pesoComestible / contadorComestible;
+	} else {
+		promedioPesoComestible = 0;
+	}
+	if (contadorComestible != 0) {
+		promedioPesoOtro = pesoOtro / contadorOtro;
+	} else {
+		promedioPesoOtro = 0;
+	}
+
+	console.log("el porcentaje de productos elaborados por sobre el total es de: " + porcentaje + "%");
+	console.log("el tipo de mercaderia que mas aparece es: " + mayorTipo);
+	console.log("el nombre del producto mas caro es: " + nombreMasCaro);
+	console.log("el nombre del producto mas barato es: " + nombreMasBarato);
+	console.log("El promedio de pesos de limpieza es: " + promedioPesoLimpieza);
+	console.log("El promedio de pesos de comestibles es: " + promedioPesoComestible);
+	console.log("El promedio de pesos de otro es: " + promedioPesoOtro);
+
+}
+

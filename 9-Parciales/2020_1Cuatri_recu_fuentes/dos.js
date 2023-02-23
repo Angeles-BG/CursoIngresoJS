@@ -34,12 +34,10 @@ function mostrar() {
   let acumuladorBolsasArena;
   let acumuladorBolsasCal;
   let acumuladorBolsasCemento;
-  let tipoMasCaroCal;
   let banderaMasCaraCal;
   let precioMasCaro;
   let mensaje;
   let banderaMasBarataCemento; 
-  let tipoMasBaratoCemento;
   let precioMasBaratoCemento; 
   let cantidadArena; 
   let promedioDeCompra; 
@@ -79,7 +77,6 @@ function mostrar() {
       case "cal":
         acumuladorBolsasCal = acumuladorBolsasCal + cantidadDeBolsas;
         if (banderaMasCaraCal == 0 || precioPorBolsa > precioMasCaro) {
-          tipoMasCaroCal = tipoDeMaterial;
           precioMasCaro = precioPorBolsa;
           banderaMasCaraCal = 1;
         }
@@ -87,7 +84,6 @@ function mostrar() {
       case "cemento":
         acumuladorBolsasCemento = acumuladorBolsasCemento + cantidadDeBolsas;
         if (banderaMasBarataCemento == 0 || precioPorBolsa < precioMasBaratoCemento) {
-          tipoMasBaratoCemento = tipoDeMaterial;
           precioMasBaratoCemento = precioPorBolsa;
           banderaMasBarataCemento = 1;
         }
@@ -110,14 +106,6 @@ function mostrar() {
     mensaje = "El importe a pagar con descuento es de: $" + importeTotalConDescuento;
   } else {
     mensaje = "El importe a pagar sin descuento es de: $" + importeTotalSinDescuento;
-  }
-
-  if (acumuladorBolsasArena > acumuladorBolsasCal && acumuladorBolsasArena > acumuladorBolsasCemento) {
-    tipoConMasCantidadDeBolsas = "arena";
-  } else if (acumuladorBolsasCal > acumuladorBolsasCemento) {
-    tipoConMasCantidadDeBolsas = "cal";
-  } else {
-    tipoConMasCantidadDeBolsas = "cemento";
   }
 
   if (cantidadArena != 0) {

@@ -65,9 +65,7 @@ function mostrar()
 			nacionalidadMayorTemperatura = nacionalidad; 
 			banderaTemperatura = 1;
 		}
-
 		
-
 		switch (estadoCivil) {
 			case "viudo":
 				if (sexo == "f") {

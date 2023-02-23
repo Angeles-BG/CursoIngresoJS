@@ -31,9 +31,7 @@ function mostrar() {
 	let flagJabon;
 	let promedioCompra;
 	let mayorTipo;
-	let totalDeCompraJabon;
-	let totalDeCompraAlcohol;
-	let totalDeCompraBarbijo; 
+
 
 	flagJabon = 0;
 	flagTipoConMasUnidades = 0;
@@ -72,12 +70,10 @@ function mostrar() {
 			case "alcohol":
 				contadorAlcohol = contadorAlcohol + 1;
 				acumuladorAlcohol = unidadesProducto + acumuladorAlcohol;
-				totalDeCompraAlcohol = totalDeCompraAlcohol + precioProducto * unidadesProducto; 
 				break;
 			case "barbijo":
 				contadorBarbijo = contadorBarbijo + 1;
 				acumuladorBarbijo = acumuladorBarbijo + unidadesProducto;
-				totalDeCompraBarbijo = totalDeCompraBarbijo + precioProducto * unidadesProducto; 
 				break;
 			case "jabon":
 				if (flagJabon == 0 || precioProducto > precioMasCaroJabon) {
@@ -85,7 +81,6 @@ function mostrar() {
 					unidadesCantidadMasCaroJabon = unidadesProducto;
 					precioMasCaroJabon = precioProducto;
 					flagJabon = 1;
-					totalDeCompraJabon = totalDeCompraJabon + precioProducto * unidadesProducto; 
 				}
 				contadorJabon = contadorJabon + 1;
 				acumuladorJabon = acumuladorJabon + unidadesProducto;

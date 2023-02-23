@@ -16,7 +16,6 @@ function mostrar()
 	let temperaturaCorporal;
 	let banderaTemperatura;
 	let mayorTemperatutra;
-	let nombreMayorTemperatura;
 	let mayoresDeEdadSolteros;
 	let mujeresSolterasOViudas;
 	let personasDeTerceraEdadTemperatura;
@@ -30,14 +29,13 @@ function mostrar()
 
 	banderaTemperatura = 0;
 	mayorTemperatutra = 0;
-	nombreMayorTemperatura = 0;
 	mayoresDeEdadSolteros = 0;
 	mujeresSolterasOViudas = 0;
 	personasDeTerceraEdadTemperatura = 0;
 	sumaEdad = 0;
 	cantidadHombresSolteros = 0;
 	respuesta = "si";
-	banderaNacionalidad = 0; 
+
 
 	while (respuesta == "si") {
 		nombre = prompt("Ingrese su nombre: ");
@@ -63,8 +61,7 @@ function mostrar()
 		}
 
 		if (banderaTemperatura == 0 || temperaturaCorporal > mayorTemperatutra) {
-			mayorTemperatutra = temperaturaCorporal;
-			nombreMayorTemperatura = nombre;
+			mayorTemperatutra = temperaturaCorporal; 
 			nacionalidadMayorTemperatura = nacionalidad; 
 			banderaTemperatura = 1;
 		}

@@ -43,10 +43,17 @@ function mostrar() {
 	let varonesNotaMayorSeis;
 	let desaprobados;
 	let banderaNotaBaja;
+	let contador;
 
+	contador = 0; 
+	varonesNotaMayorSeis = 0; 
+	desaprobados = 0; 
+	totalDeNotas = 0; 
+	banderaNotaBaja = 0; 
 
 	for (let i = 0; i < 7; i++) {
-	
+
+		contador = contador +1; 
 		sexoAlumno = prompt("Ingrese el sexo del alumno: ");
 		while (sexoAlumno != "f" && sexoAlumno != "F" && sexoAlumno != "m" && sexoAlumno != "M" && sexoAlumno != "b" && sexoAlumno != "B") {
 			sexoAlumno = prompt("Ingrese un sexo valido: 'f' o 'm' o 'b' ");
@@ -65,16 +72,16 @@ function mostrar() {
 			sexoNotaBaja = sexoAlumno;
 		}
 		if(notaAlumno>5 && (sexoAlumno == "m" || sexoAlumno == "M")) {
-			varonesNotaMayorSeis = varonesNotaMayorSeis +1
+			varonesNotaMayorSeis = varonesNotaMayorSeis +1; 
 		}
 		if(notaAlumno <4){
 			desaprobados = desaprobados +1; 
 		}
 	}
-	promedio = totalDeNotas / i;
+	promedio = totalDeNotas / contador;
 	alert("El promedio de las notas es: " + promedio);
 	alert("la nota mas baja fue: " + notaMasBaja + " de un estudiante de sexo " + sexoNotaBaja);
 	alert("La cantidad de varones con nota mayor o igual a seis son: " + varonesNotaMayorSeis);
-	alert("La cantidad dealumnos desaprobados es de: " + desaprobados);
+	alert("La cantidad de alumnos desaprobados es de: " + desaprobados);
 
 }//FIN DE LA FUNCIÓN

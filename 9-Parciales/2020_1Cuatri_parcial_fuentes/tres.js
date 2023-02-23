@@ -21,18 +21,18 @@ function mostrar() {
 	let hombresSolterosoViudos;
 	let personasDeTerceraEdadTemperatura;
 	let sumaEdad;
-	let cantidadHombresSolteros; 
+	let cantidadHombresSolteros;
 	let promedioEdad;
 	let respuesta;
 
 	banderaTemperatura = 0;
-	mayorTemperatutra = 0; 
-	nombreMayorTemperatura = 0; 
-	mayoresDeEdadViudos = 0; 
-	hombresSolterosoViudos = 0; 
-	personasDeTerceraEdadTemperatura = 0; 
-	sumaEdad = 0; 
-	cantidadHombresSolteros = 0; 
+	mayorTemperatutra = 0;
+	nombreMayorTemperatura = 0;
+	mayoresDeEdadViudos = 0;
+	hombresSolterosoViudos = 0;
+	personasDeTerceraEdadTemperatura = 0;
+	sumaEdad = 0;
+	cantidadHombresSolteros = 0;
 	respuesta = "si";
 
 	while (respuesta == "si") {
@@ -60,31 +60,42 @@ function mostrar() {
 			banderaTemperatura = 1;
 		}
 
-		if (edad > 18 && estadoCivil == "viudo") {
-			mayoresDeEdadViudos = mayoresDeEdadViudos + 1;
-		}
-
-		if (sexo == "m" && (estadoCivil == "soltero" || estadoCivil == "viudo")) {
-			hombresSolterosoViudos = hombresSolterosoViudos + 1;
+		switch (estadoCivil) {
+			case "viudo":
+				if (edad > 17) {
+					mayoresDeEdadViudos = mayoresDeEdadViudos + 1;
+				}
+				if (sexo == "m") {
+					hombresSolterosoViudos = hombresSolterosoViudos + 1;
+				}
+				break;
+			case "soltero":
+				if (sexo == "m") {
+					hombresSolterosoViudos = hombresSolterosoViudos + 1;
+					sumaEdad = sumaEdad + edad;
+					cantidadHombresSolteros = cantidadHombresSolteros + 1;
+				}
+				break;
 		}
 
 		if (edad > 60 && temperaturaCorporal > 38) {
 			personasDeTerceraEdadTemperatura = personasDeTerceraEdadTemperatura + 1;
 		}
 
-		if (sexo == "m" && estadoCivil == "soltero") {
-			sumaEdad = sumaEdad + edad;
-			cantidadHombresSolteros = cantidadHombresSolteros +1;
-		}
-
-		respuesta = prompt("¿Quiere ingreser a otra persona? si o no "); 
+		respuesta = prompt("¿Quiere ingreser a otra persona? si o no ");
 	}
 
-	promedioEdad = sumaEdad /cantidadHombresSolteros; 
-	console.log("La persona con mas temperatura es: "+ nombreMayorTemperatura);
-	console.log("La cantidad de mayores de edad viudos es de: "+ mayoresDeEdadViudos);
-	console.log("La cantidad de hombres solteros o viudos es de: "+ hombresSolterosoViudos);
+	if (cantidadHombresSolteros != 0) {
+		promedioEdad = sumaEdad / cantidadHombresSolteros;
+		console.log("El promedio de edad entre los hombres solteros es de: " + promedioEdad);
+	}else{
+		console.log("No hay solteros")
+	}
+
+	console.log("La persona con mas temperatura es: " + nombreMayorTemperatura);
+	console.log("La cantidad de mayores de edad viudos es de: " + mayoresDeEdadViudos);
+	console.log("La cantidad de hombres solteros o viudos es de: " + hombresSolterosoViudos);
 	console.log("La cantidad de personas de la tercera edad que tienen una temperatura mayor a 38 grados es de: " + personasDeTerceraEdadTemperatura);
-	console.log("El promedio de edad entre los hombres solteros es de: "+ promedioEdad); 
+	
 
 }

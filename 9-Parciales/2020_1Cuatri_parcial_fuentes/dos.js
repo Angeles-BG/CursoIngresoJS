@@ -107,186 +107,211 @@ function mostrar() {
 }
 */
 /*
-Parcial 2020 2 bis: /"La veterinaria" pedir el ingreso de 10 mascotas
+Parcial 2020 2 bis: /"La veterinaria" pedir el ingreso de 10 mascotas 
+Usar for (10)
 validar
-tipo ( gato , perro , pájaro y otros)solo esos cuatro tipo
+tipo ( gato , perro , pájaro y otros)solo esos cuatro tipo 
+Usar While
 raza: si es perro (pastor, toy, callejero) y 
-si gato (siamés, turco, Peterbald , generico) 
+Usar While
+si gato (siames, turco, Peterbald , generico) 
+Usar While
 y si es de tipo "otros" o pájaro , pedir solo un texto
+Usar While
 Edad entre 1 y 20 para gatos y perros , para "otros" entre 1 y 100 , para pájaro 1 de 50
+Usar While
 nombre (no se permite solo numero)
+Usar While
 mostrar por cada tipo el nombre del mas viejo , solo si hay de ese tipo
 mostrar que raza de gatos tiene mas animales y el promedio de edad de esta raza/ 
 
 */
 function mostrar() {
-  let tipoDeAnimal;
+  let tipo;
   let raza;
-  let edad;
   let nombre;
-  let masViejoPerro;
   let masViejoGato;
-  let masViejoOtro;
+  let masViejoPerro;
   let masViejoPajaro;
-  let masViejoPerroNombre;
-  let masViejoGatoNombre;
-  let masViejoOtroNombre;
-  let masViejoPajaroNombre;
-  let banderaMasViejoPajaro;
-  let banderaMasViejoPerro;
+  let masviejoOtro;
+  let edadMasViejoGato;
+  let edadMasViejoPerro;
+  let edadMasViejoPajaro;
+  let edadMasViejoOtro;
   let banderaMasViejoGato;
+  let banderaMasViejoPerro;
+  let banderaMasViejoPajaro;
   let banderaMasViejoOtro;
-  let siames;
-  let turco;
-  let peterbald;
-  let generico;
-  let edadSiames;
-  let edadTurco;
-  let edadPeterbald;
-  let edadGenerico;
-  let promedio;
-  let masAnimales;
+  let contadorSiames;
+  let contadorTurco;
+  let contadorPerbald;
+  let contadorGenerico;
+  let promedioEdad;
+  let sumaEdadSimes;
+  let sumaEdadTurco;
+  let sumaEdadPerbald;
+  let sumaEdadGenerico;
+  let razaConMasAnimales; 
 
-  banderaMasViejoPerro = 0;
   banderaMasViejoGato = 0;
-  banderaMasViejoOtro = 0;
+  banderaMasViejoPerro = 0;
   banderaMasViejoPajaro = 0;
-  siames = 0;
-  turco = 0;
-  peterbald = 0;
-  generico = 0;
-  edadSiames = 0;
-  edadTurco = 0;
-  edadPeterbald = 0;
-  edadGenerico = 0;
-
+  banderaMasViejoOtro = 0;
+  contadorSiames = 0;
+  contadorTurco = 0;
+  contadorPerbald = 0;
+  contadorGenerico = 0;
+  promedioEdad = 0;
+  sumaEdadSimes = 0;
+  sumaEdadTurco = 0;
+  sumaEdadPerbald = 0;
+  sumaEdadGenerico = 0;
+  masViejoGato = 0;
+  masViejoPerro = 0;
+  masViejoPajaro = 0;
+  masviejoOtro = 0;
 
   for (let i = 0; i < 10; i++) {
-    tipoDeAnimal = prompt("Ingrese que tipo de animal es: gato , perro , pajaro o otro ");
-    switch (tipoDeAnimal) {
+    nombre = prompt("Ingrese el nombre del animal: ")
+    while (!isNaN(nombre)) {
+      nombre = prompt("Ingrese el nombre del animal: ");
+    }// Fin While NOMBRE
+    tipo = prompt("Ingrese el tipo de animal que es: (solo se acepta: gato , perro , pajaro y otros)");
+    while (tipo != "gato" && tipo != "perro" && tipo != "pajaro" && tipo != "otro") {
+      tipo = prompt("Ingrese el tipo de animal que es: (solo se acepta: gato , perro , pajaro y otro)");
+    }// Fin While tipo
+    switch (tipo) {
       case "perro":
-        raza = prompt("Ingrese la raza del animal: pastor, toy, callejero");
+        raza = prompt("Ingrese el raza de animal que es: (solo se acepta: pastor, toy, callejero)");
         while (raza != "pastor" && raza != "toy" && raza != "callejero") {
-          raza = prompt("Error- Ingrese la raza del animal: pastor, toy, callejero");
-        }
-        edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 20 "));
-        while (isNaN(edad) && edad > 20 && edad < 1) {
-          edad = parseInt(prompt("Error- Ingrese la edad del animal: entre 1 y 20 "));
-        }
-        if (banderaMasViejoPerro == 0 || edad > masViejoPerro) {
-          masViejoPerroNombre = nombre;
-          masViejoPerro = edad;
+          raza = prompt("Ingrese el raza de animal que es: (solo se acepta: pastor, toy, callejero)");
+        }// Fin While RAZA
+        edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 20"));
+        while (isNaN(edad) || edad < 1 || edad > 20) {
+          edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 20"));
+        }//FinWhile EDAD
+        if (banderaMasViejoPerro == 0 || edad > edadMasViejoPerro) {
+          masViejoPerro = nombre;
+          edadMasViejoPerro = edad;
           banderaMasViejoPerro = 1;
-        }
+        }//Fin If masViejoPerro
         break;
       case "gato":
-        if (banderaMasViejoGato == 0 || edad > masViejoGato) {
-          masViejoGatoNombre = nombre;
-          masViejoGato = edad;
+        raza = prompt("Ingrese el raza de animal que es: (solo se acepta: siames, turco, peterbald , generico)");
+        while (raza != "siames" && raza != "turco" && raza != "peterbald" && raza != "generico") {
+          raza = prompt("Ingrese el raza de animal que es: (solo se acepta: siames, turco, peterbald , generico)");
+        }// Fin While raza
+        edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 20"));
+        while (isNaN(edad) || edad < 1 || edad > 20) {
+          edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 20"));
+        }//FinWhile EDAD
+        if (banderaMasViejoGato == 0 || edad > edadMasViejoGato) {
+          masViejoGato = nombre;
+          edadMasViejoGato = edad;
           banderaMasViejoGato = 1;
-        }
-        raza = prompt("Ingrese la raza del animal: siamés, turco, Peterbald , generico");
-        while (raza != "siamés" && raza != "turco" && raza != "Peterbald" && raza != "generico") {
-          raza = prompt("Ingrese la raza del animal: siamés, turco, Peterbald , generico");
-        }
-        edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 20 "));
-        while (isNaN(edad) && edad > 20 && edad < 1) {
-          edad = parseInt(prompt("Error- Ingrese la edad del animal: entre 1 y 20 "));
-        }
+        }//Fin If masViejoGato
         switch (raza) {
-          case "siamés":
-            siames = siames + 1;
-            edadSiames = edadSiames + edad;
+          case "siames":
+            contadorSiames = contadorSiames + 1;
+            sumaEdadSimes = edad + sumaEdadSimes;
             break;
-          case "turco":
-            turco = turco + 1;
-            edadTurco = edadTurco + edad;
-            break;
-          case "Peterbald":
-            peterbald = peterbald + 1;
-            edadPeterbald = edadPeterbald + edad;
+          case "peterbald":
+            contadorPerbald = contadorPerbald + 1;
+            sumaEdadPerbald = edad + sumaEdadPerbald;
             break;
           case "generico":
-            generico = generico + 1;
-            edadGenerico = edadGenerico + edad;
+            contadorGenerico = contadorGenerico + 1;
+            sumaEdadGenerico = edad + sumaEdadGenerico;
             break;
-        }// fin switch raza gato
-        break;
-      case "otro":
-        if (banderaMasViejoOtro == 0 || edad > masViejoOtro) {
-          masViejoOtroNombre = nombre;
-          masViejoOtro = edad;
-          banderaMasViejoOtro = 1;
-        }
-        raza = prompt("Ingrese la raza del animal: ");
-        edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 100 "));
-        while (isNaN(edad) && edad > 100 && edad < 1) {
-          edad = parseInt(prompt("Error- Ingrese la edad del animal: entre 1 y 100 "));
-        }
+          case "turco":
+            contadorTurco = contadorTurco + 1;
+            sumaEdadTurco = edad + sumaEdadTurco;
+            break;
+        }//Fin switch RAZA
         break;
       case "pajaro":
-        if (banderaMasViejoPajaro == 0 || edad > masViejoPajaro) {
-          masViejoPajaroNombre = nombre;
-          masViejoPajaro = edad;
+        raza = prompt("Ingrese el raza de animal que es: ");
+        while (!isNaN(raza)) {
+          raza = prompt("Ingrese el raza de animal que es: ");
+        }// Fin While raza
+        edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 50"));
+        while (isNaN(edad) || edad < 1 || edad > 50) {
+          edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 50"));
+        }//FinWhile EDAD
+        if (banderaMasViejoPajaro == 0 || edad > edadMasViejoPajaro) {
+          masViejoPajaro = nombre;
+          edadMasViejoPajaro = edad;
           banderaMasViejoPajaro = 1;
-        }
-        raza = prompt("Ingrese la raza del animal: ");
-        edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 20 "));
-        while (isNaN(edad) && edad > 50 && edad < 1) {
-          edad = parseInt(prompt("Error- Ingrese la edad del animal: entre 1 y 50 "));
-        }
+        }//Fin If masViejoPajaro
         break;
-      default:
-        tipoDeAnimal = prompt("Error- Ingrese que tipo de animal es: gato , perro , pajaro o otro ");
+      case "otro":
+        raza = prompt("Ingrese el raza de animal que es: ");
+        while (!isNaN(raza)) {
+          raza = prompt("Ingrese el raza de animal que es: ");
+        }// Fin While raza
+        edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 100"));
+        while (isNaN(edad) || edad < 1 || edad > 100) {
+          edad = parseInt(prompt("Ingrese la edad del animal: entre 1 y 100"));
+        }//FinWhile EDAD
+        if (banderaMasViejoOtro == 0 || edad > edadMasViejoOtro) {
+          masviejoOtro = nombre;
+          edadMasViejoOtro = edad;
+          banderaMasViejoOtro = 1;
+        }//Fin If masViejoOtro
         break;
+    }// Fin del switch
 
-    }// fin switch.
-    nombre = prompt("Ingrese el nombre del animal: ");
-    if (!isNaN(nombre)) {
-      nombre = prompt("Error- Ingrese el nombre del animal: (no puede tener numeros)");
-    }
+  }//Fin del FOR
 
-
-  }//fin del for 
-  if (siames > turco) {
-    if (siames > generico) {
-      if (siames > peterbald) {
-        masAnimales = "siames";
-        promedio = edadSiames / siames; 
-      } else {
-        masAnimales = "peterbald";
-        promedio = edadPeterbald / peterbald; 
+  if (contadorSiames>contadorTurco){
+    if(contadorSiames>contadorPerbald){
+      if(contadorSiames>contadorGenerico){
+        razaConMasAnimales = "Siames"; 
+        promedioEdad = sumaEdadSimes / contadorSiames;
+      }else{
+        razaConMasAnimales = "generico"; 
+        promedioEdad = sumaEdadGenerico / contadorGenerico;
       }
-    } else if (generico > peterbald) {
-      masAnimales = "generico";
-      promedio = edadGenerico / generico; 
-    } else {
-      masAnimales = "peterbald";
-      promedio = edadPeterbald / peterbald; 
-    }
-  } else if (turco > generico) {
-    if(turco>peterbald){
-      masAnimales = "turco";
-      promedio = edadTurco / turco; 
+    }else if (contadorPerbald>contadorGenerico){
+      razaConMasAnimales = "Peterbald"; 
+      promedioEdad = sumaEdadPerbald / contadorPerbald;
     }else{
-      masAnimales = "peterbald";
-      promedio = edadPeterbald / peterbald; 
+      razaConMasAnimales = "generico";
+      promedioEdad = sumaEdadGenerico / contadorGenerico;
     }
-  }else if(generico>peterbald){
-    masAnimales = "generico";
-    promedio = edadGenerico / generico; 
+  }else if(contadorTurco>contadorPerbald){
+    if(contadorTurco>contadorGenerico){
+      razaConMasAnimales = "Turco"; 
+      promedioEdad = sumaEdadTurco/ contadorTurco;
+    }else{
+      razaConMasAnimales =  "generico";
+      promedioEdad = sumaEdadGenerico / contadorGenerico;
+    }
+  }else if(contadorPerbald>contadorGenerico){
+    razaConMasAnimales = "Peterbald"; 
+    promedioEdad = sumaEdadPerbald / contadorPerbald;
   }else{
-    masAnimales = "peterbald";
-    promedio = edadPeterbald / peterbald; 
-  }
+    razaConMasAnimales =  "generico";
+    promedioEdad = sumaEdadGenerico / contadorGenerico;
+  }// Fin If raza con mas animales 
 
-  // mostrar por cada tipo el nombre del mas viejo , solo si hay de ese tipo
-  //mostrar que raza de gatos tiene mas animales y el promedio de edad de esta raza/ 
-  console.log("El mas viejo de los perros se llama: " + masViejoPerroNombre);
-  console.log("El mas viejo de los gatos se llama: " + masViejoGatoNombre);
-  console.log("El mas viejo de los pajaros se llama: " + masViejoPajaroNombre);
-  console.log("El mas viejo de la opcion 'otro' es: " + masViejoOtroNombre);
-  console.log("La raza de gatos con mas animales es: " + masAnimales);
-  console.log("El promedio de edad de esta raza es: " + promedio);
+  //mostrar por cada tipo el nombre del mas viejo , solo si hay de ese tipo
+  //mostrar que raza de gatos tiene mas animales y el promedio de edad de esta raza
+  if (masViejoGato != 0){
+    console.log("El nombre del animal mas viejo de gatos es: " + masViejoGato);
+  }
+  if (masViejoPerro != 0){
+    console.log("El nombre del animal mas viejo de los perros es: " + masViejoPerro);
+  }
+  if (masViejoPajaro != 0){
+    console.log("El nombre del animal mas viejo de los pajaros es: " + masViejoPajaro);
+  }
+  if (masviejoOtro != 0){
+    console.log("El nombre del animal mas viejo de los 'otro' es: " + masviejoOtro);
+  }
+  
+  console.log("La raza de gatos que mas animales tiene es:  " + razaConMasAnimales + " y el promedio de edad de esta raza es: " + promedioEdad);
+
+
 
 }// fin de la funcion

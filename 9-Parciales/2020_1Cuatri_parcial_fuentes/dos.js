@@ -151,7 +151,7 @@ function mostrar() {
   let sumaEdadTurco;
   let sumaEdadPerbald;
   let sumaEdadGenerico;
-  let razaConMasAnimales; 
+  let razaConMasAnimales;
 
   banderaMasViejoGato = 0;
   banderaMasViejoPerro = 0;
@@ -263,53 +263,35 @@ function mostrar() {
 
   }//Fin del FOR
 
-  if (contadorSiames>contadorTurco){
-    if(contadorSiames>contadorPerbald){
-      if(contadorSiames>contadorGenerico){
-        razaConMasAnimales = "Siames"; 
-        promedioEdad = sumaEdadSimes / contadorSiames;
-      }else{
-        razaConMasAnimales = "generico"; 
-        promedioEdad = sumaEdadGenerico / contadorGenerico;
-      }
-    }else if (contadorPerbald>contadorGenerico){
-      razaConMasAnimales = "Peterbald"; 
-      promedioEdad = sumaEdadPerbald / contadorPerbald;
-    }else{
-      razaConMasAnimales = "generico";
-      promedioEdad = sumaEdadGenerico / contadorGenerico;
-    }
-  }else if(contadorTurco>contadorPerbald){
-    if(contadorTurco>contadorGenerico){
-      razaConMasAnimales = "Turco"; 
-      promedioEdad = sumaEdadTurco/ contadorTurco;
-    }else{
-      razaConMasAnimales =  "generico";
-      promedioEdad = sumaEdadGenerico / contadorGenerico;
-    }
-  }else if(contadorPerbald>contadorGenerico){
-    razaConMasAnimales = "Peterbald"; 
+  if (contadorSiames > contadorTurco && contadorSiames > contadorPerbald && contadorSiames > contadorGenerico) {
+    razaConMasAnimales = "Siames";
+    promedioEdad = sumaEdadSimes / contadorSiames;
+  } else if (contadorPerbald > contadorGenerico && contadorPerbald > contadorTurco) {
+    razaConMasAnimales = "Peterbald";
     promedioEdad = sumaEdadPerbald / contadorPerbald;
-  }else{
-    razaConMasAnimales =  "generico";
+  } else if (contadorGenerico > contadorTurco) {
+    razaConMasAnimales = "generico";
     promedioEdad = sumaEdadGenerico / contadorGenerico;
+  } else {
+    razaConMasAnimales = "Turco";
+    promedioEdad = sumaEdadTurco / contadorTurco;
   }// Fin If raza con mas animales 
 
   //mostrar por cada tipo el nombre del mas viejo , solo si hay de ese tipo
   //mostrar que raza de gatos tiene mas animales y el promedio de edad de esta raza
-  if (masViejoGato != 0){
+  if (masViejoGato != 0) {
     console.log("El nombre del animal mas viejo de gatos es: " + masViejoGato);
   }
-  if (masViejoPerro != 0){
+  if (masViejoPerro != 0) {
     console.log("El nombre del animal mas viejo de los perros es: " + masViejoPerro);
   }
-  if (masViejoPajaro != 0){
+  if (masViejoPajaro != 0) {
     console.log("El nombre del animal mas viejo de los pajaros es: " + masViejoPajaro);
   }
-  if (masviejoOtro != 0){
+  if (masviejoOtro != 0) {
     console.log("El nombre del animal mas viejo de los 'otro' es: " + masviejoOtro);
   }
-  
+
   console.log("La raza de gatos que mas animales tiene es:  " + razaConMasAnimales + " y el promedio de edad de esta raza es: " + promedioEdad);
 
 

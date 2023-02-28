@@ -135,20 +135,20 @@ function mostrar() {
 	let nombreMenosHabitantes;
 	let cantidadPaisesMasCuarenta;
 	let cantidadPaisesAmericaMenosCero;
-	let acumuladorHabitantes; 
+	let acumuladorHabitantes;
 	let promedioHabitantes;
-	let acumuladorHabitantesMasCuarenta; 
+	let acumuladorHabitantesMasCuarenta;
 	let promedioHabitantesMasCuarenta;
 	let temperaturaMasBaja;
 	let nombreTemperaturaMasBaja;
 	let banderaTempraturaMasBaja;
 	let continenteConMasHabitantes;
-	let banderaMenosHabitantes; 
+	let banderaMenosHabitantes;
 	let contadorHabitantesEuropa;
 	let contadorDeHabitantesAsia;
 	let contadorDeHabitantesOceania;
-	let contadorDeHabitantesAmerica; 
-	let contadorDeHabitantesAfrica; 
+	let contadorDeHabitantesAmerica;
+	let contadorDeHabitantesAfrica;
 
 	contadorTemperaturasPares = 0;
 	contadorTemperaturasImpares = 0;
@@ -162,14 +162,14 @@ function mostrar() {
 	nombreTemperaturaMasBaja = 0;
 	banderaTempraturaMasBaja = 0;
 	continenteConMasHabitantes = 0;
-	banderaMenosHabitantes = 0; 
-	acumuladorHabitantes = 0; 
-	acumuladorHabitantesMasCuarenta = 0 ;  
-	contadorHabitantesEuropa = 0; 
-	contadorDeHabitantesAsia = 0; 
-	contadorDeHabitantesOceania = 0; 
+	banderaMenosHabitantes = 0;
+	acumuladorHabitantes = 0;
+	acumuladorHabitantesMasCuarenta = 0;
+	contadorHabitantesEuropa = 0;
+	contadorDeHabitantesAsia = 0;
+	contadorDeHabitantesOceania = 0;
 	contadorDeHabitantesAmerica = 0;
-	contadorDeHabitantesAfrica = 0;   
+	contadorDeHabitantesAfrica = 0;
 
 	for (let i = 0; i < 5; i++) {
 		continente = prompt("Ingrese el nombre del continente: (solo se acepta America , Asia , Europa ,Africa y Oceania)");
@@ -185,7 +185,7 @@ function mostrar() {
 			cantidadHabitantes = parseInt(prompt("Ingrese la cantidad de habitantes: (Solo se acepta en millones entre 1 y 7000 )"));
 		}//Fin While CANTIDAD HABITANTES
 		temperaturaMinima = parseFloat(prompt("Ingrese la temperatura minima rersgistrada: (solo se acepta entre -50 y 50)"));
-		while(isNaN(temperaturaMinima) || temperaturaMinima < -50 || temperaturaMinima > 50){
+		while (isNaN(temperaturaMinima) || temperaturaMinima < -50 || temperaturaMinima > 50) {
 			temperaturaMinima = parseFloat(prompt("Ingrese la temperatura minima rersgistrada: (solo se acepta entre -50 y 50)"));
 		}//Fin While TEMPERATURA MINIMA
 		switch (continente) {
@@ -194,130 +194,93 @@ function mostrar() {
 				while (nivelDepobresa != "rico" && nivelDepobresa != "millonario") {
 					nivelDepobresa = prompt("Ingrese el nivel de pobresa: (solo se acepta rico o millonario)");
 				}//Fin While NIVEL DE POBRESA
-				if (temperaturaMinima % 2 != 0){
-					contadorTemperaturasImpares = contadorTemperaturasImpares +1; 
+				if (temperaturaMinima % 2 != 0) {
+					contadorTemperaturasImpares = contadorTemperaturasImpares + 1;
 				}//Fin If TEMPERATURAS IMPARES EUROPA
-				contadorHabitantesEuropa = contadorHabitantesEuropa + menosHabitantes; 
+				contadorHabitantesEuropa = contadorHabitantesEuropa + menosHabitantes;
 				break;
 			case "America":
 				nivelDepobresa = prompt("Ingrese el nivel de pobresa: (solo se acepta pobre, rico, millonario)");
 				while (nivelDepobresa != "pobre" && nivelDepobresa != "rico" && nivelDepobresa != "millonario") {
 					nivelDepobresa = prompt("Ingrese el nivel de pobresa: (solo se acepta pobre, rico, millonario)");
 				}//Fin While NIVEL DE POBRESA
-				if (temperaturaMinima<0 ){
-					cantidadPaisesAmericaMenosCero = cantidadPaisesAmericaMenosCero +1; 
+				if (temperaturaMinima < 0) {
+					cantidadPaisesAmericaMenosCero = cantidadPaisesAmericaMenosCero + 1;
 				}//Fin If TEMPERATURA AMERICA MENOS CERO GRADOS
-				contadorDeHabitantesAmerica = contadorDeHabitantesAmerica + cantidadHabitantes; 
-				break; 
+				contadorDeHabitantesAmerica = contadorDeHabitantesAmerica + cantidadHabitantes;
+				break;
 			case "Asia":
 				nivelDepobresa = prompt("Ingrese el nivel de pobresa: (solo se acepta pobre, rico, millonario)");
 				while (nivelDepobresa != "pobre" && nivelDepobresa != "rico" && nivelDepobresa != "millonario") {
 					nivelDepobresa = prompt("Ingrese el nivel de pobresa: (solo se acepta pobre, rico, millonario)");
 				}//Fin While NIVEL DE POBRESA
-				contadorDeHabitantesAsia =  contadorDeHabitantesAsia + cantidadHabitantes; 
-				break; 
+				contadorDeHabitantesAsia = contadorDeHabitantesAsia + cantidadHabitantes;
+				break;
 			case "Oceania":
 				nivelDepobresa = prompt("Ingrese el nivel de pobresa: (solo se acepta pobre, rico, millonario)");
 				while (nivelDepobresa != "pobre" && nivelDepobresa != "rico" && nivelDepobresa != "millonario") {
 					nivelDepobresa = prompt("Ingrese el nivel de pobresa: (solo se acepta pobre, rico, millonario)");
 				}//Fin While NIVEL DE POBRESA
-				contadorDeHabitantesOceania = contadorDeHabitantesOceania + cantidadHabitantes; 
-				break; 
+				contadorDeHabitantesOceania = contadorDeHabitantesOceania + cantidadHabitantes;
+				break;
 			case "Africa":
 				nivelDepobresa = prompt("Ingrese el nivel de pobresa: (solo se acepta pobre, rico, millonario)");
 				while (nivelDepobresa != "pobre" && nivelDepobresa != "rico" && nivelDepobresa != "millonario") {
 					nivelDepobresa = prompt("Ingrese el nivel de pobresa: (solo se acepta pobre, rico, millonario)");
 				}//Fin While NIVEL DE POBRESA
-				contadorDeHabitantesAfrica = contadorDeHabitantesAfrica + cantidadHabitantes; 
+				contadorDeHabitantesAfrica = contadorDeHabitantesAfrica + cantidadHabitantes;
 				break;
 		}//Fin Switch CONTINENTE
-		
-		if (temperaturaMinima % 2 == 0){
-			contadorTemperaturasPares = contadorTemperaturasPares +1;
+
+		if (temperaturaMinima % 2 == 0) {
+			contadorTemperaturasPares = contadorTemperaturasPares + 1;
 		}// Fin If TEMPERATURAS PARES 
 
-		if(banderaMenosHabitantes == 0 || cantidadHabitantes < menosHabitantes){
+		if (banderaMenosHabitantes == 0 || cantidadHabitantes < menosHabitantes) {
 			menosHabitantes = cantidadHabitantes;
 			nombreMenosHabitantes = nombrePais;
-			banderaMenosHabitantes = 1; 
+			banderaMenosHabitantes = 1;
 		}//Fin If MENOS HABITANTES
 
-		if (temperaturaMinima > 40){
-			cantidadPaisesMasCuarenta = cantidadPaisesMasCuarenta +1; 
-			acumuladorHabitantesMasCuarenta = acumuladorHabitantesMasCuarenta + cantidadHabitantes; 
+		if (temperaturaMinima > 40) {
+			cantidadPaisesMasCuarenta = cantidadPaisesMasCuarenta + 1;
+			acumuladorHabitantesMasCuarenta = acumuladorHabitantesMasCuarenta + cantidadHabitantes;
 		}//Fin If TEMPERATURA MAS CUARENTA
 
-		if (banderaTempraturaMasBaja == 0 || temperaturaMinima < temperaturaMasBaja){
+		if (banderaTempraturaMasBaja == 0 || temperaturaMinima < temperaturaMasBaja) {
 			temperaturaMasBaja = temperaturaMinima;
 			nombreTemperaturaMasBaja = nombrePais;
-			banderaTempraturaMasBaja = 1; 
+			banderaTempraturaMasBaja = 1;
 		}//Fin If TEMPERATURA MAS BAJA
 
-		acumuladorHabitantes = acumuladorHabitantes + cantidadHabitantes; 
+		acumuladorHabitantes = acumuladorHabitantes + cantidadHabitantes;
 
 	}//Fin For
 
-	if (contadorHabitantesEuropa>contadorDeHabitantesAmerica ){
-		if(contadorHabitantesEuropa>contadorDeHabitantesAsia){
-			if (contadorHabitantesEuropa>contadorDeHabitantesOceania){
-				if (contadorHabitantesEuropa>contadorDeHabitantesAfrica){
-					continenteConMasHabitantes = "Europa"; 
-				}else{
-					continenteConMasHabitantes = "Africa"; 
-				}
-			}else if(contadorDeHabitantesOceania>contadorDeHabitantesAfrica){
-				continenteConMasHabitantes = "Oceania";
-			}else{
-				continenteConMasHabitantes = "Africa"; 
-			}
-		}else if(contadorDeHabitantesAsia>contadorDeHabitantesOceania){
-			if(contadorDeHabitantesAsia>contadorDeHabitantesAfrica){
-				continenteConMasHabitantes = "Asia";
-			}else {
-				continenteConMasHabitantes = "Africa";
-			}
-		}else if (contadorDeHabitantesOceania>contadorDeHabitantesAfrica){
-			continenteConMasHabitantes = "Oceania";
-		}else{
-			continenteConMasHabitantes = "Africa"; 
-		}
-	}else if (contadorDeHabitantesAmerica >contadorDeHabitantesAsia){
-		if (contadorDeHabitantesAmerica >contadorDeHabitantesOceania){
-			if (contadorDeHabitantesAmerica >contadorDeHabitantesAfrica){
-				continenteConMasHabitantes = "America" ;
-			}else {
-				continenteConMasHabitantes = "Africa"; 
-			}
-		}else if (contadorDeHabitantesOceania>contadorDeHabitantesAfrica){
-			continenteConMasHabitantes = "Oceania";
-		}else{
-			continenteConMasHabitantes = "Africa"; 
-		}
-	}else if (contadorDeHabitantesAsia>contadorDeHabitantesOceania){
-		if(contadorDeHabitantesAsia>contadorDeHabitantesAfrica){
-			continenteConMasHabitantes = "Asia";
-		}else{
-			continenteConMasHabitantes = "Africa"; 
-		}
-	}else if(contadorDeHabitantesOceania>contadorDeHabitantesAfrica){
-		continenteConMasHabitantes = "Oceania";
+	if (contadorHabitantesEuropa > contadorDeHabitantesAmerica && contadorHabitantesEuropa > contadorDeHabitantesAsia && contadorHabitantesEuropa > contadorDeHabitantesOceania && contadorHabitantesEuropa > contadorDeHabitantesAfrica) {
+		continenteConMasHabitantes = "Europa";
+	}else if(contadorDeHabitantesAmerica > contadorDeHabitantesAsia && contadorDeHabitantesAmerica > contadorDeHabitantesOceania && contadorDeHabitantesAmerica > contadorDeHabitantesAfrica){
+		continenteConMasHabitantes = "America";
+	}else if(contadorDeHabitantesAsia > contadorDeHabitantesOceania && contadorDeHabitantesAsia > contadorDeHabitantesAfrica){
+		continenteConMasHabitantes = "Asia";
+	}else if(contadorDeHabitantesAfrica > contadorDeHabitantesOceania){
+		continenteConMasHabitantes = "Africa";
 	}else{
-		continenteConMasHabitantes = "Africa"; 
+		continenteConMasHabitantes = "Oceania"; 
 	}
 
-	
-	promedioHabitantes = acumuladorHabitantes / 5 ; 
-	promedioHabitantesMasCuarenta = acumuladorHabitantesMasCuarenta / cantidadPaisesMasCuarenta; 
+	promedioHabitantes = acumuladorHabitantes / 5;
+	promedioHabitantesMasCuarenta = acumuladorHabitantesMasCuarenta / cantidadPaisesMasCuarenta;
 
 	console.log("La cantidad de temperaturas pares es: " + contadorTemperaturasPares);
-	console.log("La cantidad de temperaturas impares de europa es: " +contadorTemperaturasImpares); 
-	console.log("El nombre del pais con menos habitantes es: "+nombreMenosHabitantes); 
-	console.log("La cantidad de paises que superan los 40 grados  es: "+cantidadPaisesMasCuarenta); 
-	console.log("La cantidad de paises de america que tienen menos de 0 grados es: "+ cantidadPaisesAmericaMenosCero); 
-	console.log("El promedio de habitantes entre los paises ingresados es: "+ promedioHabitantes); 
-	console.log("El promedio de habitantes entre los paises que superan los 40 grados es: "+promedioHabitantesMasCuarenta); 
-	console.log("La temperatura mínima ingresada es: " + temperaturaMasBaja +", y nombre del pais que registro esa temperatura es:  "+nombreTemperaturaMasBaja); 
-	console.log("El continente que tiene mas habitanteses: "+continenteConMasHabitantes); 
+	console.log("La cantidad de temperaturas impares de europa es: " + contadorTemperaturasImpares);
+	console.log("El nombre del pais con menos habitantes es: " + nombreMenosHabitantes);
+	console.log("La cantidad de paises que superan los 40 grados  es: " + cantidadPaisesMasCuarenta);
+	console.log("La cantidad de paises de america que tienen menos de 0 grados es: " + cantidadPaisesAmericaMenosCero);
+	console.log("El promedio de habitantes entre los paises ingresados es: " + promedioHabitantes);
+	console.log("El promedio de habitantes entre los paises que superan los 40 grados es: " + promedioHabitantesMasCuarenta);
+	console.log("La temperatura mínima ingresada es: " + temperaturaMasBaja + ", y nombre del pais que registro esa temperatura es:  " + nombreTemperaturaMasBaja);
+	console.log("El continente que tiene mas habitanteses: " + continenteConMasHabitantes);
 
 
 }
